@@ -1,0 +1,29 @@
+<h1>Users#show</h1>
+
+ <!--User infoテンプレ-->
+ <div class="user-info">
+   <h2>User.info</h2>
+   <%= render 'users/list2', user: @user %>
+ </div>
+
+  <!--部分テンプレート-->
+  <div class="new-book">
+    <h2>New Book</h2>
+    <%= render 'users/list', book: @book %>
+  </div>
+
+ <table class="indes-table">
+  <thead>
+    <th>title</th>
+    <th>body</th>
+    <th></th>
+  </thead>
+  <% @books.each do |book| %>
+  <tbody>
+    <td><%= link_to "/books/#{book.id}" do%><%= book.title %><% end %></td>
+    <td><%= book.body %></td>
+  </tbody>
+  <% end %>
+</table>
+
+

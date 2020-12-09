@@ -1,0 +1,17 @@
+
+<h1>User info</h1>
+<div>
+  <%= form_with model: @user, local:true do |f| %>
+      <% @user.errors.full_messages.each do |message| %>
+        <li>error  <%= message %></li>
+      <% end %>
+  <p>Name</p>
+  <%= f.text_field :name %>
+  <p>image</p>
+  <%= f.attachment_field :profile_image %>
+  <p>Introduction</p>
+  <%= f.text_field :introduction %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+</div>
+

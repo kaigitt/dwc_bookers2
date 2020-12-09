@@ -1,0 +1,28 @@
+<h1>books#show</h1>
+
+<!--User infoテンプレ-->
+ <div class="user-info">
+   <h2>User.info</h2>
+   <%= render 'users/list2', user: @usershow %>
+ </div>
+
+<!--部分テンプレート-->
+<div class="new-book">
+  <h2>New Book</h2>
+　<%= render 'users/list', book: @booknew %>
+</div>
+
+<table>
+    <thead>
+      <th>title</th>
+      <th>body</th>
+    </thead>
+    <tbody>
+      <td><%= @user.name %></td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+      <td><%= link_to "Edit", "/books/#{@book.id}/edit" %></td>
+      <td><%= link_to "Destroy", "/books/#{@book.id}", method: :delete%></td>
+    </tbody>
+</table>
+

@@ -1,0 +1,12 @@
+<!--部分テンプレート-->
+
+<%= form_with model: book, local:true do |f| %>
+      <% book.errors.full_messages.each do |message| %>
+        <li>error  <%= message %></li>
+      <% end %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Body</p>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>

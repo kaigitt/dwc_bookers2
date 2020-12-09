@@ -1,0 +1,27 @@
+<h1>users#index</h1>
+<!--User infoテンプレ-->
+ @id = current_user.id
+    @user = User.find(@id)
+
+ <!--部分テンプレート-->
+  <div class="new-book">
+    <h2>New Book</h2>
+    <%= render 'users/list', book: @book %>
+  </div>
+
+<div class="users_index">
+  <table class="index-table">
+  <thead>
+    <th>image</th>
+    <th>name</th>
+    <th></th>
+  </thead>
+  <% @users.each do |user| %>
+  <tbody>
+    <td><%= attachment_image_tag user, :profile_image %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to "show", user_path(user) %></td>
+  </tbody>
+  <% end %>
+</table>
+</div>
