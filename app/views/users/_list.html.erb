@@ -1,12 +1,13 @@
 <!--部分テンプレート-->
 
 <%= form_with model: book, local:true do |f| %>
-      <% book.errors.full_messages.each do |message| %>
-        <li>error  <%= message %></li>
-      <% end %>
-  <p>Title</p>
-  <%= f.text_field :title %>
-  <p>Body</p>
-  <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>
+  <div class="form-group">
+    <body>Title</body>
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <label>Opinion</label>
+    <%= f.text_area :body, class:"form-control" %>
+  </div>
+  <button type="submit" class="btn btn-success ">Create Book</button>
 <% end %>

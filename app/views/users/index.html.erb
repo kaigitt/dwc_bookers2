@@ -1,27 +1,44 @@
-<h1>users#index</h1>
-<!--User infoテンプレ-->
- @id = current_user.id
-    @user = User.find(@id)
-
- <!--部分テンプレート-->
-  <div class="new-book">
+<div class="row center-block pt-3">
+  <div class="col-md-3">
+    <div class="col-12">
+        <!--User infoテンプレ-->
+      <div class="user-info">
+       <h2>User.info</h2>
+       <%= render 'users/list2', user: @user %>
+      </div>
+  </div>
+  <div class="col-1"></div>
+  <div class="col-12">
+        <!--部分テンプレート-->
+    <div class="new-book">
     <h2>New Book</h2>
     <%= render 'users/list', book: @book %>
+    </div>
   </div>
+ </div>
+  <div class="col-md-8">
+    <div class="book_index">
+     <div class="users_index">
 
-<div class="users_index">
-  <table class="index-table">
-  <thead>
-    <th>image</th>
-    <th>name</th>
-    <th></th>
-  </thead>
-  <% @users.each do |user| %>
-  <tbody>
-    <td><%= attachment_image_tag user, :profile_image %></td>
-    <td><%= user.name %></td>
-    <td><%= link_to "show", user_path(user) %></td>
-  </tbody>
-  <% end %>
-</table>
+
+    <h2>Users</h2>
+     <table class="table table-hover">
+    <thead>
+      <th scope="col">image</th>
+      <th scope="col">name</th>
+      <th></th>
+    </thead>
+    <% @users.each do |user| %>
+    <tbody>
+        <td>
+         <%= attachment_image_tag user, :profile_image, :fill, 40, 40 %>
+        </td>
+        <td><%= user.name %></td>
+        <td><%= link_to "show", user_path(user) %></td>
+    </tbody>
+    <% end %>
+  </table>
+  </div>
+   </div>
+  </div>
 </div>

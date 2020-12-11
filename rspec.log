@@ -1,0 +1,2162 @@
+
+Bookモデルのテスト
+  バリデーションのテスト
+    titleカラム
+[32m      空欄でないこと[0m
+    bodyカラム
+[32m      空欄でないこと[0m
+[32m      200文字以下であること: 200文字は〇[0m
+[32m      200文字以下であること: 201文字は×[0m
+  アソシエーションのテスト
+    Userモデルとの関係
+[32m      N:1となっている[0m
+
+Userモデルのテスト
+  バリデーションのテスト
+    nameカラム
+[32m      空欄でないこと[0m
+[32m      2文字以上であること: 1文字は×[0m
+[32m      2文字以上であること: 2文字は〇[0m
+[32m      20文字以下であること: 20文字は〇[0m
+[32m      20文字以下であること: 21文字は×[0m
+[32m      一意性があること[0m
+    introductionカラム
+[32m      50文字以下であること: 50文字は〇[0m
+[32m      50文字以下であること: 51文字は×[0m
+  アソシエーションのテスト
+    Bookモデルとの関係
+[32m      1:Nとなっている[0m
+
+Bookモデルのテスト
+  バリデーションのテスト
+    titleカラム
+[32m      空欄でないこと[0m
+    bodyカラム
+[32m      空欄でないこと[0m
+[32m      200文字以下であること: 200文字は〇[0m
+[32m      200文字以下であること: 201文字は×[0m
+  アソシエーションのテスト
+    Userモデルとの関係
+[32m      N:1となっている[0m
+
+Userモデルのテスト
+  バリデーションのテスト
+    nameカラム
+[32m      空欄でないこと[0m
+[32m      2文字以上であること: 1文字は×[0m
+[32m      2文字以上であること: 2文字は〇[0m
+[32m      20文字以下であること: 20文字は〇[0m
+[32m      20文字以下であること: 21文字は×[0m
+[32m      一意性があること[0m
+    introductionカラム
+[32m      50文字以下であること: 50文字は〇[0m
+[32m      50文字以下であること: 51文字は×[0m
+  アソシエーションのテスト
+    Bookモデルとの関係
+[32m      1:Nとなっている[0m
+
+[STEP1] ユーザログイン前のテスト
+  トップ画面のテスト
+    表示内容の確認
+[31m      URLが正しい (FAILED - 1)[0m
+[31m      Log inリンクが表示される: 左上から5番目のリンクが「Log in」である (FAILED - 2)[0m
+[31m      Log inリンクの内容が正しい (FAILED - 3)[0m
+[31m      Sign Upリンクが表示される: 左上から6番目のリンクが「Sign Up」である (FAILED - 4)[0m
+[31m      Sign Upリンクの内容が正しい (FAILED - 5)[0m
+  アバウト画面のテスト
+    表示内容の確認
+[31m      URLが正しい (FAILED - 6)[0m
+  ヘッダーのテスト: ログインしていない場合
+    表示内容の確認
+[31m      タイトルが表示される (FAILED - 7)[0m
+[31m      Homeリンクが表示される: 左上から1番目のリンクが「Home」である (FAILED - 8)[0m
+[31m      Aboutリンクが表示される: 左上から2番目のリンクが「About」である (FAILED - 9)[0m
+[31m      sign upリンクが表示される: 左上から3番目のリンクが「sign up」である (FAILED - 10)[0m
+[31m      loginリンクが表示される: 左上から4番目のリンクが「login」である (FAILED - 11)[0m
+    リンクの内容を確認
+[31m      Homeを押すと、トップ画面に遷移する (FAILED - 12)[0m
+[31m      Aboutを押すと、アバウト画面に遷移する (FAILED - 13)[0m
+[31m      sign upを押すと、新規登録画面に遷移する (FAILED - 14)[0m
+[31m      loginを押すと、ログイン画面に遷移する (FAILED - 15)[0m
+  ユーザ新規登録のテスト
+    表示内容の確認
+[31m      URLが正しい (FAILED - 16)[0m
+[31m      「Sign up」と表示される (FAILED - 17)[0m
+[31m      nameフォームが表示される (FAILED - 18)[0m
+[31m      emailフォームが表示される (FAILED - 19)[0m
+[31m      passwordフォームが表示される (FAILED - 20)[0m
+[31m      password_confirmationフォームが表示される (FAILED - 21)[0m
+[31m      Sign upボタンが表示される (FAILED - 22)[0m
+    新規登録成功のテスト
+[31m      正しく新規登録される (FAILED - 23)[0m
+[31m      新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている (FAILED - 24)[0m
+  ユーザログイン
+    表示内容の確認
+[31m      URLが正しい (FAILED - 25)[0m
+[31m      「Log in」と表示される (FAILED - 26)[0m
+[31m      nameフォームが表示される (FAILED - 27)[0m
+[31m      passwordフォームが表示される (FAILED - 28)[0m
+[31m      Sign upボタンが表示される (FAILED - 29)[0m
+[31m      emailフォームは表示されない (FAILED - 30)[0m
+    ログイン成功のテスト
+[31m      ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている (FAILED - 31)[0m
+    ログイン失敗のテスト
+[31m      ログインに失敗し、ログイン画面にリダイレクトされる (FAILED - 32)[0m
+  ヘッダーのテスト: ログインしている場合
+    ヘッダーの表示を確認
+[31m      タイトルが表示される (FAILED - 33)[0m
+[31m      Homeリンクが表示される: 左上から1番目のリンクが「Home」である (FAILED - 34)[0m
+[31m      Usersリンクが表示される: 左上から2番目のリンクが「Users」である (FAILED - 35)[0m
+[31m      Booksリンクが表示される: 左上から3番目のリンクが「Books」である (FAILED - 36)[0m
+[31m      log outリンクが表示される: 左上から4番目のリンクが「logout」である (FAILED - 37)[0m
+  ユーザログアウトのテスト
+    ログアウト機能のテスト
+[31m      正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する (FAILED - 38)[0m
+[31m      ログアウト後のリダイレクト先が、トップになっている (FAILED - 39)[0m
+
+[STEP2] ユーザログイン後のテスト
+  ヘッダーのテスト: ログインしている場合
+    リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。
+[31m      Homeを押すと、自分のユーザ詳細画面に遷移する (FAILED - 40)[0m
+[31m      Usersを押すと、ユーザ一覧画面に遷移する (FAILED - 41)[0m
+[31m      Booksを押すと、投稿一覧画面に遷移する (FAILED - 42)[0m
+  投稿一覧画面のテスト
+    表示内容の確認
+[31m      URLが正しい (FAILED - 43)[0m
+[31m      自分と他人の画像のリンク先が正しい (FAILED - 44)[0m
+[31m      自分の投稿と他人の投稿のタイトルのリンク先がそれぞれ正しい (FAILED - 45)[0m
+[31m      自分の投稿と他人の投稿のオピニオンが表示される (FAILED - 46)[0m
+    サイドバーの確認
+[31m      自分の名前と紹介文が表示される (FAILED - 47)[0m
+[31m      自分のユーザ編集画面へのリンクが存在する (FAILED - 48)[0m
+[31m      「New book」と表示される (FAILED - 49)[0m
+[31m      titleフォームが表示される (FAILED - 50)[0m
+[31m      titleフォームに値が入っていない (FAILED - 51)[0m
+[31m      opinionフォームが表示される (FAILED - 52)[0m
+[31m      opinionフォームに値が入っていない (FAILED - 53)[0m
+[31m      Create Bookボタンが表示される (FAILED - 54)[0m
+    投稿成功のテスト
+[31m      自分の新しい投稿が正しく保存される (FAILED - 55)[0m
+[31m      リダイレクト先が、保存できた投稿の詳細画面になっている (FAILED - 56)[0m
+  自分の投稿詳細画面のテスト
+    表示内容の確認
+[31m      URLが正しい (FAILED - 57)[0m
+[31m      「Book detail」と表示される (FAILED - 58)[0m
+[31m      ユーザ画像・名前のリンク先が正しい (FAILED - 59)[0m
+[31m      投稿のtitleが表示される (FAILED - 60)[0m
+[31m      投稿のopinionが表示される (FAILED - 61)[0m
+[31m      投稿の編集リンクが表示される (FAILED - 62)[0m
+[31m      投稿の削除リンクが表示される (FAILED - 63)[0m
+    サイドバーの確認
+[31m      自分の名前と紹介文が表示される (FAILED - 64)[0m
+[31m      自分のユーザ編集画面へのリンクが存在する (FAILED - 65)[0m
+[31m      「New book」と表示される (FAILED - 66)[0m
+[31m      titleフォームが表示される (FAILED - 67)[0m
+[31m      titleフォームに値が入っていない (FAILED - 68)[0m
+[31m      opinionフォームが表示される (FAILED - 69)[0m
+[31m      opinionフォームに値が入っていない (FAILED - 70)[0m
+[31m      Create Bookボタンが表示される (FAILED - 71)[0m
+    投稿成功のテスト
+[31m      自分の新しい投稿が正しく保存される (FAILED - 72)[0m
+    編集リンクのテスト
+[31m      編集画面に遷移する (FAILED - 73)[0m
+    削除リンクのテスト
+[31m      正しく削除される (FAILED - 74)[0m
+[31m      リダイレクト先が、投稿一覧画面になっている (FAILED - 75)[0m
+  自分の投稿編集画面のテスト
+    表示の確認
+[31m      URLが正しい (FAILED - 76)[0m
+[31m      「Editing Book」と表示される (FAILED - 77)[0m
+[31m      title編集フォームが表示される (FAILED - 78)[0m
+[31m      opinion編集フォームが表示される (FAILED - 79)[0m
+[31m      Update Bookボタンが表示される (FAILED - 80)[0m
+[31m      Showリンクが表示される (FAILED - 81)[0m
+[31m      Backリンクが表示される (FAILED - 82)[0m
+    編集成功のテスト
+[31m      titleが正しく更新される (FAILED - 83)[0m
+[31m      bodyが正しく更新される (FAILED - 84)[0m
+[31m      リダイレクト先が、更新した投稿の詳細画面になっている (FAILED - 85)[0m
+  ユーザ一覧画面のテスト
+    表示内容の確認
+[31m      URLが正しい (FAILED - 86)[0m
+[31m      自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する (FAILED - 87)[0m
+[31m      自分と他人の名前がそれぞれ表示される (FAILED - 88)[0m
+[31m      自分と他人のshowリンクがそれぞれ表示される (FAILED - 89)[0m
+    サイドバーの確認
+[31m      自分の名前と紹介文が表示される (FAILED - 90)[0m
+[31m      自分のユーザ編集画面へのリンクが存在する (FAILED - 91)[0m
+[31m      「New book」と表示される (FAILED - 92)[0m
+[31m      titleフォームが表示される (FAILED - 93)[0m
+[31m      titleフォームに値が入っていない (FAILED - 94)[0m
+[31m      opinionフォームが表示される (FAILED - 95)[0m
+[31m      opinionフォームに値が入っていない (FAILED - 96)[0m
+[31m      Create Bookボタンが表示される (FAILED - 97)[0m
+  自分のユーザ詳細画面のテスト
+    表示の確認
+[31m      URLが正しい (FAILED - 98)[0m
+[31m      投稿一覧のユーザ画像のリンク先が正しい (FAILED - 99)[0m
+[31m      投稿一覧に自分の投稿のtitleが表示され、リンクが正しい (FAILED - 100)[0m
+[31m      投稿一覧に自分の投稿のopinionが表示される (FAILED - 101)[0m
+[31m      他人の投稿は表示されない (FAILED - 102)[0m
+    サイドバーの確認
+[31m      自分の名前と紹介文が表示される (FAILED - 103)[0m
+[31m      自分のユーザ編集画面へのリンクが存在する (FAILED - 104)[0m
+[31m      「New book」と表示される (FAILED - 105)[0m
+[31m      titleフォームが表示される (FAILED - 106)[0m
+[31m      titleフォームに値が入っていない (FAILED - 107)[0m
+[31m      opinionフォームが表示される (FAILED - 108)[0m
+[31m      opinionフォームに値が入っていない (FAILED - 109)[0m
+[31m      Create Bookボタンが表示される (FAILED - 110)[0m
+  自分のユーザ情報編集画面のテスト
+    表示の確認
+[31m      URLが正しい (FAILED - 111)[0m
+[31m      名前編集フォームに自分の名前が表示される (FAILED - 112)[0m
+[31m      画像編集フォームが表示される (FAILED - 113)[0m
+[31m      自己紹介編集フォームに自分の自己紹介文が表示される (FAILED - 114)[0m
+[31m      Update Userボタンが表示される (FAILED - 115)[0m
+    更新成功のテスト
+[31m      nameが正しく更新される (FAILED - 116)[0m
+[31m      introductionが正しく更新される (FAILED - 117)[0m
+[31m      リダイレクト先が、自分のユーザ詳細画面になっている (FAILED - 118)[0m
+
+[STEP3] 仕上げのテスト
+  サクセスメッセージのテスト
+[31m    ユーザ新規登録成功時 (FAILED - 119)[0m
+[31m    ユーザログイン成功時 (FAILED - 120)[0m
+[31m    ユーザログアウト成功時 (FAILED - 121)[0m
+[31m    ユーザのプロフィール情報更新成功時 (FAILED - 122)[0m
+[31m    投稿データの新規投稿成功時: 投稿一覧画面から行います。 (FAILED - 123)[0m
+[31m    投稿データの更新成功時 (FAILED - 124)[0m
+  処理失敗時のテスト
+    ユーザ新規登録失敗: nameを1文字にする
+[31m      新規登録されない (FAILED - 125)[0m
+[31m      新規登録画面を表示しており、フォームの内容が正しい (FAILED - 126)[0m
+[31m      バリデーションエラーが表示される (FAILED - 127)[0m
+    ユーザのプロフィール情報編集失敗: nameを1文字にする
+[31m      更新されない (FAILED - 128)[0m
+[31m      ユーザ編集画面を表示しており、フォームの内容が正しい (FAILED - 129)[0m
+[31m      バリデーションエラーが表示される (FAILED - 130)[0m
+    投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする
+[31m      投稿が保存されない (FAILED - 131)[0m
+[31m      投稿一覧画面を表示している (FAILED - 132)[0m
+[31m      新規投稿フォームの内容が正しい (FAILED - 133)[0m
+[31m      バリデーションエラーが表示される (FAILED - 134)[0m
+    投稿データの更新失敗: titleを空にする
+[31m      投稿が更新されない (FAILED - 135)[0m
+[31m      投稿編集画面を表示しており、フォームの内容が正しい (FAILED - 136)[0m
+[31m      エラーメッセージが表示される (FAILED - 137)[0m
+  ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する
+[31m    ユーザ一覧画面 (FAILED - 138)[0m
+[31m    ユーザ詳細画面 (FAILED - 139)[0m
+[31m    ユーザ情報編集画面 (FAILED - 140)[0m
+[31m    投稿一覧画面 (FAILED - 141)[0m
+[31m    投稿詳細画面 (FAILED - 142)[0m
+[31m    投稿編集画面 (FAILED - 143)[0m
+  他人の画面のテスト
+    他人の投稿詳細画面のテスト
+      表示内容の確認
+[31m        URLが正しい (FAILED - 144)[0m
+[31m        「Book detail」と表示される (FAILED - 145)[0m
+[31m        ユーザ画像・名前のリンク先が正しい (FAILED - 146)[0m
+[31m        投稿のtitleが表示される (FAILED - 147)[0m
+[31m        投稿のopinionが表示される (FAILED - 148)[0m
+[31m        投稿の編集リンクが表示されない (FAILED - 149)[0m
+[31m        投稿の削除リンクが表示されない (FAILED - 150)[0m
+      サイドバーの確認
+[31m        他人の名前と紹介文が表示される (FAILED - 151)[0m
+[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 152)[0m
+[31m        自分の名前と紹介文は表示されない (FAILED - 153)[0m
+[31m        自分のユーザ編集画面へのリンクは存在しない (FAILED - 154)[0m
+    他人の投稿編集画面
+[31m      遷移できず、投稿一覧画面にリダイレクトされる (FAILED - 155)[0m
+    他人のユーザ詳細画面のテスト
+      表示の確認
+[31m        URLが正しい (FAILED - 156)[0m
+[31m        投稿一覧のユーザ画像のリンク先が正しい (FAILED - 157)[0m
+[31m        投稿一覧に他人の投稿のtitleが表示され、リンクが正しい (FAILED - 158)[0m
+[31m        投稿一覧に他人の投稿のopinionが表示される (FAILED - 159)[0m
+[31m        自分の投稿は表示されない (FAILED - 160)[0m
+      サイドバーの確認
+[31m        他人の名前と紹介文が表示される (FAILED - 161)[0m
+[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 162)[0m
+[31m        自分の名前と紹介文は表示されない (FAILED - 163)[0m
+[31m        自分のユーザ編集画面へのリンクは存在しない (FAILED - 164)[0m
+    他人のユーザ情報編集画面
+[31m      遷移できず、自分のユーザ詳細画面にリダイレクトされる (FAILED - 165)[0m
+  グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている
+[31m    ユーザ一覧画面 (FAILED - 166)[0m
+[31m    ユーザ詳細画面 (FAILED - 167)[0m
+[31m    投稿一覧画面 (FAILED - 168)[0m
+[31m    投稿詳細画面 (FAILED - 169)[0m
+  アイコンのテスト
+    トップ画面
+[31m      本のアイコンが表示される (FAILED - 170)[0m
+    アバウト画面
+[31m      本のアイコンが表示される (FAILED - 171)[0m
+    ヘッダー: ログインしていない場合
+[31m      Homeリンクのアイコンが表示される (FAILED - 172)[0m
+[31m      Aboutリンクのアイコンが表示される (FAILED - 173)[0m
+[31m      sign upリンクのアイコンが表示される (FAILED - 174)[0m
+[31m      loginリンクのアイコンが表示される (FAILED - 175)[0m
+    ヘッダー: ログインしている場合
+[31m      Homeリンクのアイコンが表示される (FAILED - 176)[0m
+[31m      Usersリンクのアイコンが表示される (FAILED - 177)[0m
+[31m      Booksリンクのアイコンが表示される (FAILED - 178)[0m
+[31m      log outリンクのアイコンが表示される (FAILED - 179)[0m
+    サイドバー
+[31m      ユーザ一覧画面でレンチアイコンが表示される (FAILED - 180)[0m
+[31m      ユーザ詳細画面でレンチアイコンが表示される (FAILED - 181)[0m
+[31m      投稿一覧画面でレンチアイコンが表示される (FAILED - 182)[0m
+[31m      投稿詳細画面でレンチアイコンが表示される (FAILED - 183)[0m
+
+[STEP1] ユーザログイン前のテスト
+  トップ画面のテスト
+    表示内容の確認
+[32m      URLが正しい[0m
+[32m      Log inリンクが表示される: 左上から5番目のリンクが「Log in」である[0m
+[32m      Log inリンクの内容が正しい[0m
+[32m      Sign Upリンクが表示される: 左上から6番目のリンクが「Sign Up」である[0m
+[32m      Sign Upリンクの内容が正しい[0m
+  アバウト画面のテスト
+    表示内容の確認
+[32m      URLが正しい[0m
+  ヘッダーのテスト: ログインしていない場合
+    表示内容の確認
+[32m      タイトルが表示される[0m
+[32m      Homeリンクが表示される: 左上から1番目のリンクが「Home」である[0m
+[32m      Aboutリンクが表示される: 左上から2番目のリンクが「About」である[0m
+[32m      sign upリンクが表示される: 左上から3番目のリンクが「sign up」である[0m
+[32m      loginリンクが表示される: 左上から4番目のリンクが「login」である[0m
+    リンクの内容を確認
+[32m      Homeを押すと、トップ画面に遷移する[0m
+[32m      Aboutを押すと、アバウト画面に遷移する[0m
+[32m      sign upを押すと、新規登録画面に遷移する[0m
+[32m      loginを押すと、ログイン画面に遷移する[0m
+  ユーザ新規登録のテスト
+    表示内容の確認
+[32m      URLが正しい[0m
+[32m      「Sign up」と表示される[0m
+[32m      nameフォームが表示される[0m
+[32m      emailフォームが表示される[0m
+[32m      passwordフォームが表示される[0m
+[32m      password_confirmationフォームが表示される[0m
+[32m      Sign upボタンが表示される[0m
+    新規登録成功のテスト
+[32m      正しく新規登録される[0m
+[32m      新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている[0m
+  ユーザログイン
+    表示内容の確認
+[32m      URLが正しい[0m
+[32m      「Log in」と表示される[0m
+[32m      nameフォームが表示される[0m
+[32m      passwordフォームが表示される[0m
+[32m      Sign upボタンが表示される[0m
+[32m      emailフォームは表示されない[0m
+    ログイン成功のテスト
+[32m      ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている[0m
+    ログイン失敗のテスト
+[32m      ログインに失敗し、ログイン画面にリダイレクトされる[0m
+  ヘッダーのテスト: ログインしている場合
+    ヘッダーの表示を確認
+[32m      タイトルが表示される[0m
+[32m      Homeリンクが表示される: 左上から1番目のリンクが「Home」である[0m
+[32m      Usersリンクが表示される: 左上から2番目のリンクが「Users」である[0m
+[32m      Booksリンクが表示される: 左上から3番目のリンクが「Books」である[0m
+[32m      log outリンクが表示される: 左上から4番目のリンクが「logout」である[0m
+  ユーザログアウトのテスト
+    ログアウト機能のテスト
+[32m      正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する[0m
+[32m      ログアウト後のリダイレクト先が、トップになっている[0m
+
+[STEP2] ユーザログイン後のテスト
+  ヘッダーのテスト: ログインしている場合
+    リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。
+[32m      Homeを押すと、自分のユーザ詳細画面に遷移する[0m
+[32m      Usersを押すと、ユーザ一覧画面に遷移する[0m
+[32m      Booksを押すと、投稿一覧画面に遷移する[0m
+  投稿一覧画面のテスト
+    表示内容の確認
+[32m      URLが正しい[0m
+[32m      自分と他人の画像のリンク先が正しい[0m
+[32m      自分の投稿と他人の投稿のタイトルのリンク先がそれぞれ正しい[0m
+[32m      自分の投稿と他人の投稿のオピニオンが表示される[0m
+    サイドバーの確認
+[32m      自分の名前と紹介文が表示される[0m
+[32m      自分のユーザ編集画面へのリンクが存在する[0m
+[31m      「New book」と表示される (FAILED - 184)[0m
+[32m      titleフォームが表示される[0m
+[32m      titleフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
+[32m      Create Bookボタンが表示される[0m
+    投稿成功のテスト
+[32m      自分の新しい投稿が正しく保存される[0m
+[32m      リダイレクト先が、保存できた投稿の詳細画面になっている[0m
+  自分の投稿詳細画面のテスト
+    表示内容の確認
+[32m      URLが正しい[0m
+[32m      「Book detail」と表示される[0m
+[32m      ユーザ画像・名前のリンク先が正しい[0m
+[32m      投稿のtitleが表示される[0m
+[32m      投稿のopinionが表示される[0m
+[32m      投稿の編集リンクが表示される[0m
+[32m      投稿の削除リンクが表示される[0m
+    サイドバーの確認
+[32m      自分の名前と紹介文が表示される[0m
+[32m      自分のユーザ編集画面へのリンクが存在する[0m
+[31m      「New book」と表示される (FAILED - 185)[0m
+[32m      titleフォームが表示される[0m
+[32m      titleフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
+[32m      Create Bookボタンが表示される[0m
+    投稿成功のテスト
+[32m      自分の新しい投稿が正しく保存される[0m
+    編集リンクのテスト
+[32m      編集画面に遷移する[0m
+    削除リンクのテスト
+[32m      正しく削除される[0m
+[32m      リダイレクト先が、投稿一覧画面になっている[0m
+  自分の投稿編集画面のテスト
+    表示の確認
+[32m      URLが正しい[0m
+[32m      「Editing Book」と表示される[0m
+[32m      title編集フォームが表示される[0m
+[32m      opinion編集フォームが表示される[0m
+[32m      Update Bookボタンが表示される[0m
+[32m      Showリンクが表示される[0m
+[32m      Backリンクが表示される[0m
+    編集成功のテスト
+[32m      titleが正しく更新される[0m
+[32m      bodyが正しく更新される[0m
+[32m      リダイレクト先が、更新した投稿の詳細画面になっている[0m
+  ユーザ一覧画面のテスト
+    表示内容の確認
+[32m      URLが正しい[0m
+[31m      自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する (FAILED - 186)[0m
+[32m      自分と他人の名前がそれぞれ表示される[0m
+[31m      自分と他人のshowリンクがそれぞれ表示される (FAILED - 187)[0m
+    サイドバーの確認
+[32m      自分の名前と紹介文が表示される[0m
+[32m      自分のユーザ編集画面へのリンクが存在する[0m
+[31m      「New book」と表示される (FAILED - 188)[0m
+[32m      titleフォームが表示される[0m
+[32m      titleフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
+[32m      Create Bookボタンが表示される[0m
+  自分のユーザ詳細画面のテスト
+    表示の確認
+[32m      URLが正しい[0m
+[32m      投稿一覧のユーザ画像のリンク先が正しい[0m
+[32m      投稿一覧に自分の投稿のtitleが表示され、リンクが正しい[0m
+[32m      投稿一覧に自分の投稿のopinionが表示される[0m
+[32m      他人の投稿は表示されない[0m
+    サイドバーの確認
+[32m      自分の名前と紹介文が表示される[0m
+[32m      自分のユーザ編集画面へのリンクが存在する[0m
+[31m      「New book」と表示される (FAILED - 189)[0m
+[32m      titleフォームが表示される[0m
+[32m      titleフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
+[32m      Create Bookボタンが表示される[0m
+  自分のユーザ情報編集画面のテスト
+    表示の確認
+[32m      URLが正しい[0m
+[32m      名前編集フォームに自分の名前が表示される[0m
+[32m      画像編集フォームが表示される[0m
+[32m      自己紹介編集フォームに自分の自己紹介文が表示される[0m
+[32m      Update Userボタンが表示される[0m
+    更新成功のテスト
+[32m      nameが正しく更新される[0m
+[32m      introductionが正しく更新される[0m
+[32m      リダイレクト先が、自分のユーザ詳細画面になっている[0m
+
+[STEP3] 仕上げのテスト
+  サクセスメッセージのテスト
+[32m    ユーザ新規登録成功時[0m
+[32m    ユーザログイン成功時[0m
+[32m    ユーザログアウト成功時[0m
+[32m    ユーザのプロフィール情報更新成功時[0m
+[32m    投稿データの新規投稿成功時: 投稿一覧画面から行います。[0m
+[32m    投稿データの更新成功時[0m
+  処理失敗時のテスト
+    ユーザ新規登録失敗: nameを1文字にする
+[32m      新規登録されない[0m
+[32m      新規登録画面を表示しており、フォームの内容が正しい[0m
+[32m      バリデーションエラーが表示される[0m
+    ユーザのプロフィール情報編集失敗: nameを1文字にする
+[32m      更新されない[0m
+[32m      ユーザ編集画面を表示しており、フォームの内容が正しい[0m
+[32m      バリデーションエラーが表示される[0m
+    投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする
+[32m      投稿が保存されない[0m
+[32m      投稿一覧画面を表示している[0m
+[32m      新規投稿フォームの内容が正しい[0m
+[32m      バリデーションエラーが表示される[0m
+    投稿データの更新失敗: titleを空にする
+[32m      投稿が更新されない[0m
+[32m      投稿編集画面を表示しており、フォームの内容が正しい[0m
+[32m      エラーメッセージが表示される[0m
+  ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する
+[32m    ユーザ一覧画面[0m
+[32m    ユーザ詳細画面[0m
+[32m    ユーザ情報編集画面[0m
+[32m    投稿一覧画面[0m
+[32m    投稿詳細画面[0m
+[32m    投稿編集画面[0m
+  他人の画面のテスト
+    他人の投稿詳細画面のテスト
+      表示内容の確認
+[32m        URLが正しい[0m
+[32m        「Book detail」と表示される[0m
+[32m        ユーザ画像・名前のリンク先が正しい[0m
+[32m        投稿のtitleが表示される[0m
+[32m        投稿のopinionが表示される[0m
+[32m        投稿の編集リンクが表示されない[0m
+[32m        投稿の削除リンクが表示されない[0m
+      サイドバーの確認
+[32m        他人の名前と紹介文が表示される[0m
+[32m        他人のユーザ編集画面へのリンクが存在する[0m
+[32m        自分の名前と紹介文は表示されない[0m
+[32m        自分のユーザ編集画面へのリンクは存在しない[0m
+    他人の投稿編集画面
+[32m      遷移できず、投稿一覧画面にリダイレクトされる[0m
+    他人のユーザ詳細画面のテスト
+      表示の確認
+[32m        URLが正しい[0m
+[31m        投稿一覧のユーザ画像のリンク先が正しい (FAILED - 190)[0m
+[32m        投稿一覧に他人の投稿のtitleが表示され、リンクが正しい[0m
+[32m        投稿一覧に他人の投稿のopinionが表示される[0m
+[32m        自分の投稿は表示されない[0m
+      サイドバーの確認
+[32m        他人の名前と紹介文が表示される[0m
+[32m        他人のユーザ編集画面へのリンクが存在する[0m
+[32m        自分の名前と紹介文は表示されない[0m
+[32m        自分のユーザ編集画面へのリンクは存在しない[0m
+    他人のユーザ情報編集画面
+[31m      遷移できず、自分のユーザ詳細画面にリダイレクトされる (FAILED - 191)[0m
+  グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている
+[31m    ユーザ一覧画面 (FAILED - 192)[0m
+[31m    ユーザ詳細画面 (FAILED - 193)[0m
+[31m    投稿一覧画面 (FAILED - 194)[0m
+[31m    投稿詳細画面 (FAILED - 195)[0m
+  アイコンのテスト
+    トップ画面
+[32m      本のアイコンが表示される[0m
+    アバウト画面
+[31m      本のアイコンが表示される (FAILED - 196)[0m
+    ヘッダー: ログインしていない場合
+[32m      Homeリンクのアイコンが表示される[0m
+[32m      Aboutリンクのアイコンが表示される[0m
+[32m      sign upリンクのアイコンが表示される[0m
+[32m      loginリンクのアイコンが表示される[0m
+    ヘッダー: ログインしている場合
+[32m      Homeリンクのアイコンが表示される[0m
+[32m      Usersリンクのアイコンが表示される[0m
+[32m      Booksリンクのアイコンが表示される[0m
+[32m      log outリンクのアイコンが表示される[0m
+    サイドバー
+[32m      ユーザ一覧画面でレンチアイコンが表示される[0m
+[32m      ユーザ詳細画面でレンチアイコンが表示される[0m
+[32m      投稿一覧画面でレンチアイコンが表示される[0m
+[32m      投稿詳細画面でレンチアイコンが表示される[0m
+
+Failures:
+
+  1) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 URLが正しい
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested::Nested:0x000000000781b198>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:6:in `block (3 levels) in <main>'[0m
+
+  2) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Log inリンクが表示される: 左上から5番目のリンクが「Log in」である
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested::Nested:0x000000000781fc20>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:6:in `block (3 levels) in <main>'[0m
+
+  3) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Log inリンクの内容が正しい
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested::Nested:0x000000000781c9f8>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:6:in `block (3 levels) in <main>'[0m
+
+  4) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Sign Upリンクが表示される: 左上から6番目のリンクが「Sign Up」である
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested::Nested:0x00000000078217c8>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:6:in `block (3 levels) in <main>'[0m
+
+  5) [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Sign Upリンクの内容が正しい
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested::Nested:0x0000000007826570>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:6:in `block (3 levels) in <main>'[0m
+
+  6) [STEP1] ユーザログイン前のテスト アバウト画面のテスト 表示内容の確認 URLが正しい
+     [31mFailure/Error: visit '/home/about'[0m
+     [31m[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `visit' for #<RSpec::ExampleGroups::STEP1::Nested_2::Nested:0x000000000782a0a8>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:34:in `block (3 levels) in <main>'[0m
+
+  7) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 タイトルが表示される
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested:0x000000000782db68>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  8) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Homeリンクが表示される: 左上から1番目のリンクが「Home」である
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested:0x00000000078328c0>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  9) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Aboutリンクが表示される: 左上から2番目のリンクが「About」である
+     [31mFailure/Error: visit root_path[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested:0x00000000078377d0>[0m
+     [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  10) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 sign upリンクが表示される: 左上から3番目のリンクが「sign up」である
+      [31mFailure/Error: visit root_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested:0x0000000007834738>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  11) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 loginリンクが表示される: 左上から4番目のリンクが「login」である
+      [31mFailure/Error: visit root_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested:0x00000000078390a8>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  12) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 Homeを押すと、トップ画面に遷移する
+      [31mFailure/Error: visit root_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested_2:0x000000000783ca00>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  13) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 Aboutを押すと、アバウト画面に遷移する
+      [31mFailure/Error: visit root_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested_2:0x0000000007858778>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  14) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 sign upを押すと、新規登録画面に遷移する
+      [31mFailure/Error: visit root_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested_2:0x0000000007840790>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  15) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 loginを押すと、ログイン画面に遷移する
+      [31mFailure/Error: visit root_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP1::Nested_3::Nested_2:0x000000000785d110>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:46:in `block (3 levels) in <main>'[0m
+
+  16) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 URLが正しい
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested:0x0000000007860360>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  17) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 「Sign up」と表示される
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested:0x000000000786cef8>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  18) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 nameフォームが表示される
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested:0x00000000078992a0>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  19) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 emailフォームが表示される
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested:0x0000000007879748>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  20) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 passwordフォームが表示される
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested:0x000000000787d050>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  21) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 password_confirmationフォームが表示される
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested:0x00000000078dfc00>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  22) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 Sign upボタンが表示される
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested:0x00000000078e3cd8>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  23) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 正しく新規登録される
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested_2:0x00000000078ff2a8>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  24) [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている
+      [31mFailure/Error: visit new_user_registration_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP1::Nested_4::Nested_2:0x00000000078a33b8>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:104:in `block (3 levels) in <main>'[0m
+
+  25) [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 URLが正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested:0x00000000079220c8>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  26) [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 「Log in」と表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested:0x0000000007902750>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  27) [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 nameフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested:0x000000000793a218>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  28) [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 passwordフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested:0x000000000793e188>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  29) [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 Sign upボタンが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested:0x0000000007940ff0>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  30) [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 emailフォームは表示されない
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested:0x0000000007946928>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  31) [STEP1] ユーザログイン前のテスト ユーザログイン ログイン成功のテスト ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested_2:0x0000000007964298>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  32) [STEP1] ユーザログイン前のテスト ユーザログイン ログイン失敗のテスト ログインに失敗し、ログイン画面にリダイレクトされる
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_5::Nested_3:0x00000000079cbe20>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:153:in `block (3 levels) in <main>'[0m
+
+  33) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 タイトルが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_6::Nested:0x00000000079da470>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:206:in `block (3 levels) in <main>'[0m
+
+  34) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 Homeリンクが表示される: 左上から1番目のリンクが「Home」である
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_6::Nested:0x0000000007972258>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:206:in `block (3 levels) in <main>'[0m
+
+  35) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 Usersリンクが表示される: 左上から2番目のリンクが「Users」である
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_6::Nested:0x00000000079f1a58>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:206:in `block (3 levels) in <main>'[0m
+
+  36) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 Booksリンクが表示される: 左上から3番目のリンクが「Books」である
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_6::Nested:0x00000000079fdb50>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:206:in `block (3 levels) in <main>'[0m
+
+  37) [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 log outリンクが表示される: 左上から4番目のリンクが「logout」である
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_6::Nested:0x0000000007a09dd8>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:206:in `block (3 levels) in <main>'[0m
+
+  38) [STEP1] ユーザログイン前のテスト ユーザログアウトのテスト ログアウト機能のテスト 正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_7::Nested:0x0000000007a14a08>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:239:in `block (3 levels) in <main>'[0m
+
+  39) [STEP1] ユーザログイン前のテスト ユーザログアウトのテスト ログアウト機能のテスト ログアウト後のリダイレクト先が、トップになっている
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP1::Nested_7::Nested:0x0000000007a18b80>[0m
+      [36m# ./spec/spec 2/system/01_before_login_spec.rb:239:in `block (3 levels) in <main>'[0m
+
+  40) [STEP2] ユーザログイン後のテスト ヘッダーのテスト: ログインしている場合 リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。 Homeを押すと、自分のユーザ詳細画面に遷移する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested::Logout:0x0000000007a45720>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  41) [STEP2] ユーザログイン後のテスト ヘッダーのテスト: ログインしている場合 リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。 Usersを押すと、ユーザ一覧画面に遷移する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested::Logout:0x0000000007b03158>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  42) [STEP2] ユーザログイン後のテスト ヘッダーのテスト: ログインしている場合 リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。 Booksを押すと、投稿一覧画面に遷移する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested::Logout:0x0000000007b3d7e0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  43) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 URLが正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested:0x0000000007b82c78>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  44) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分と他人の画像のリンク先が正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested:0x0000000007bc0d48>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  45) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分の投稿と他人の投稿のタイトルのリンク先がそれぞれ正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested:0x0000000007c06938>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  46) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分の投稿と他人の投稿のオピニオンが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested:0x0000000007c41060>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  47) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 自分の名前と紹介文が表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x0000000007c86cf0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  48) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x0000000007cc1738>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  49) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 「New book」と表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x0000000007d073a0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  50) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x0000000007d45ec0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  51) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームに値が入っていない
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x0000000007d84300>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  52) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 opinionフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x0000000007dc8e60>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  53) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 opinionフォームに値が入っていない
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x00000000076025f0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  54) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 Create Bookボタンが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_2:0x00000000078892d8>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  55) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_3:0x00000000056fae78>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  56) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト リダイレクト先が、保存できた投稿の詳細画面になっている
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_2::Nested_3:0x0000000006f99920>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  57) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 URLが正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested:0x000000000755b340>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  58) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested:0x0000000007985e70>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  59) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested:0x0000000007440050>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  60) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿のtitleが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested:0x0000000007472a78>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  61) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿のopinionが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested:0x00000000073d9170>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  62) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested:0x0000000007e070e8>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  63) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested:0x0000000007e31848>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  64) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 自分の名前と紹介文が表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007e63c58>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  65) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007e8dc88>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  66) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 「New book」と表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007eb8488>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  67) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 titleフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007eeb040>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  68) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 titleフォームに値が入っていない
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007f15570>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  69) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 opinionフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007f47f48>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  70) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 opinionフォームに値が入っていない
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007f729c8>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  71) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_2:0x0000000007f9d218>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  72) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_3:0x0000000007fcfbf0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  73) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 編集リンクのテスト 編集画面に遷移する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_4:0x0000000007ff9978>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  74) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_5:0x000000000802ab18>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  75) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_3::Nested_5:0x0000000008065358>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  76) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 URLが正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested:0x00000000080967f0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  77) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 「Editing Book」と表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested:0x00000000080c1478>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  78) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 title編集フォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested:0x00000000080f3f40>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  79) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 opinion編集フォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested:0x000000000811e380>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  80) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Update Bookボタンが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested:0x00000000081487e8>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  81) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Showリンクが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested:0x000000000817a720>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  82) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Backリンクが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested:0x00000000081a5858>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  83) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト titleが正しく更新される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested_2:0x00000000081d7f60>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  84) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト bodyが正しく更新される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested_2:0x0000000008201db0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  85) [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト リダイレクト先が、更新した投稿の詳細画面になっている
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_4::Nested_2:0x000000000822c8d0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  86) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 URLが正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested:0x000000000825db38>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  87) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested:0x0000000008288518>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  88) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人の名前がそれぞれ表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested:0x00000000082bb210>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  89) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested:0x00000000082e53d0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  90) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 自分の名前と紹介文が表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x0000000008317150>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  91) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x0000000008341b08>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  92) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 「New book」と表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x0000000008373630>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  93) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 titleフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x000000000839d5e8>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  94) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 titleフォームに値が入っていない
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x00000000083cfe08>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  95) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 opinionフォームが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x00000000083facc0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  96) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 opinionフォームに値が入っていない
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x0000000008425650>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  97) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 Create Bookボタンが表示される
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_5::Nested_2:0x00000000084502b0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  98) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 URLが正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested:0x0000000008481a18>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  99) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい
+      [31mFailure/Error: visit new_user_session_path[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested:0x00000000084b05c0>[0m
+      [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  100) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 投稿一覧に自分の投稿のtitleが表示され、リンクが正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested:0x00000000084f6fe8>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  101) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 投稿一覧に自分の投稿のopinionが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested:0x00000000085358b0>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  102) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 他人の投稿は表示されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested:0x000000000857b608>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  103) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 自分の名前と紹介文が表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x00000000085b9750>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  104) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x00000000085f8180>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  105) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 「New book」と表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x0000000006134948>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  106) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 titleフォームが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x0000000006c6dfa8>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  107) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 titleフォームに値が入っていない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x00000000075b87e8>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  108) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 opinionフォームが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x000000000774b6c8>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  109) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 opinionフォームに値が入っていない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x0000000007813538>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  110) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_6::Nested_2:0x0000000007862b88>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  111) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 URLが正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested:0x00000000079c8d60>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  112) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 名前編集フォームに自分の名前が表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested:0x0000000007aa31b8>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  113) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 画像編集フォームが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested:0x0000000007b22ad0>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  114) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 自己紹介編集フォームに自分の自己紹介文が表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested:0x0000000007b5ccd0>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  115) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 Update Userボタンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested:0x0000000007ba6998>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  116) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト nameが正しく更新される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested_2:0x0000000007be0968>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  117) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト introductionが正しく更新される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested_2:0x0000000007c265a8>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  118) [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト リダイレクト先が、自分のユーザ詳細画面になっている
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP2::Nested_7::Nested_2:0x0000000007c60a50>[0m
+       [36m# ./spec/spec 2/system/02_after_login_spec.rb:10:in `block (2 levels) in <main>'[0m
+
+  119) [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザ新規登録成功時
+       [31mFailure/Error: visit new_user_registration_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP3::Nested:0x0000000007ca5330>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:13:in `block (3 levels) in <main>'[0m
+
+  120) [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザログイン成功時
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested:0x0000000007ceb448>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:22:in `block (3 levels) in <main>'[0m
+
+  121) [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザログアウト成功時
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested:0x0000000007d29400>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:29:in `block (3 levels) in <main>'[0m
+
+  122) [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザのプロフィール情報更新成功時
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested:0x0000000007d6f9c8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:39:in `block (3 levels) in <main>'[0m
+
+  123) [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの新規投稿成功時: 投稿一覧画面から行います。
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested:0x0000000007dad390>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:48:in `block (3 levels) in <main>'[0m
+
+  124) [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの更新成功時
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested:0x00000000079c2050>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:59:in `block (3 levels) in <main>'[0m
+
+  125) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする 新規登録されない
+       [31mFailure/Error: visit new_user_registration_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Name1:0x00000000075e7408>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:72:in `block (4 levels) in <main>'[0m
+
+  126) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする 新規登録画面を表示しており、フォームの内容が正しい
+       [31mFailure/Error: visit new_user_registration_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Name1:0x0000000005871950>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:72:in `block (4 levels) in <main>'[0m
+
+  127) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする バリデーションエラーが表示される
+       [31mFailure/Error: visit new_user_registration_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_registration_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Name1:0x0000000007663c38>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:72:in `block (4 levels) in <main>'[0m
+
+  128) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする 更新されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Name1_2:0x00000000066253f8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:100:in `block (4 levels) in <main>'[0m
+
+  129) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする ユーザ編集画面を表示しており、フォームの内容が正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Name1_2:0x00000000078c3410>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:100:in `block (4 levels) in <main>'[0m
+
+  130) [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする バリデーションエラーが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Name1_2:0x000000000799dd68>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:100:in `block (4 levels) in <main>'[0m
+
+  131) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿が保存されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Title:0x000000000745f838>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:122:in `block (4 levels) in <main>'[0m
+
+  132) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿一覧画面を表示している
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Title:0x00000000073c57b0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:122:in `block (4 levels) in <main>'[0m
+
+  133) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 新規投稿フォームの内容が正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Title:0x00000000073f7e68>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:122:in `block (4 levels) in <main>'[0m
+
+  134) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Title:0x0000000007e1daf0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:122:in `block (4 levels) in <main>'[0m
+
+  135) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする 投稿が更新されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Title_2:0x0000000007e4fa00>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:152:in `block (4 levels) in <main>'[0m
+
+  136) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする 投稿編集画面を表示しており、フォームの内容が正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Title_2:0x0000000007e7a188>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:152:in `block (4 levels) in <main>'[0m
+
+  137) [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_2::Title_2:0x0000000007ea4410>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:152:in `block (4 levels) in <main>'[0m
+
+  138) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ一覧画面
+       [31mFailure/Error: visit users_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `users_path' for #<RSpec::ExampleGroups::STEP3::Nested_3:0x0000000007ed6140>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:180:in `block (3 levels) in <main>'[0m
+
+  139) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ詳細画面
+       [31mFailure/Error: visit user_path(user)[0m
+       [31m[0m
+       [31mNoMethodError:[0m
+       [31m  undefined method `user_path' for #<RSpec::ExampleGroups::STEP3::Nested_3:0x0000000007f004e0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:184:in `block (3 levels) in <main>'[0m
+
+  140) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ情報編集画面
+       [31mFailure/Error: visit edit_user_path(user)[0m
+       [31m[0m
+       [31mNoMethodError:[0m
+       [31m  undefined method `edit_user_path' for #<RSpec::ExampleGroups::STEP3::Nested_3:0x0000000007f32210>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:188:in `block (3 levels) in <main>'[0m
+
+  141) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する 投稿一覧画面
+       [31mFailure/Error: visit books_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `books_path' for #<RSpec::ExampleGroups::STEP3::Nested_3:0x0000000007f5ca88>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:192:in `block (3 levels) in <main>'[0m
+
+  142) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する 投稿詳細画面
+       [31mFailure/Error: visit book_path(book)[0m
+       [31m[0m
+       [31mNoMethodError:[0m
+       [31m  undefined method `book_path' for #<RSpec::ExampleGroups::STEP3::Nested_3:0x0000000007f8ed30>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:196:in `block (3 levels) in <main>'[0m
+
+  143) [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する 投稿編集画面
+       [31mFailure/Error: visit edit_book_path(book)[0m
+       [31m[0m
+       [31mNoMethodError:[0m
+       [31m  undefined method `edit_book_path' for #<RSpec::ExampleGroups::STEP3::Nested_3:0x0000000007fb8ea0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:200:in `block (3 levels) in <main>'[0m
+
+  144) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 URLが正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested:0x0000000007fea3d8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  145) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested:0x0000000008014b10>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  146) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested:0x0000000008046f70>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  147) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿のtitleが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested:0x0000000008081058>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  148) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿のopinionが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested:0x00000000080b33f0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  149) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested:0x00000000080dd5d8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  150) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested:0x000000000810fd58>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  151) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人の名前と紹介文が表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested_2:0x0000000008139798>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  152) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested_2:0x000000000816bd60>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  153) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分の名前と紹介文は表示されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested_2:0x0000000008196948>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  154) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested::Nested_2:0x00000000081c7c50>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  155) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_2:0x00000000081f1320>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  156) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 URLが正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested:0x0000000008222e48>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  157) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested:0x000000000824cea0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  158) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧に他人の投稿のtitleが表示され、リンクが正しい
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested:0x000000000827f030>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  159) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧に他人の投稿のopinionが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested:0x00000000082a8d40>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  160) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 自分の投稿は表示されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested:0x00000000082db7b8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  161) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人の名前と紹介文が表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested_2:0x00000000083050e0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  162) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested_2:0x0000000008337310>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  163) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 自分の名前と紹介文は表示されない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested_2:0x0000000008361458>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  164) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_3::Nested_2:0x0000000008393750>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  165) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_4::Nested_4:0x00000000083bd320>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:207:in `block (3 levels) in <main>'[0m
+
+  166) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ一覧画面
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::ContainerRowColXs:0x00000000083eeda8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:321:in `block (3 levels) in <main>'[0m
+
+  167) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ詳細画面
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::ContainerRowColXs:0x0000000008418d88>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:321:in `block (3 levels) in <main>'[0m
+
+  168) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿一覧画面
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::ContainerRowColXs:0x000000000844aec8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:321:in `block (3 levels) in <main>'[0m
+
+  169) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿詳細画面
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::ContainerRowColXs:0x0000000008475088>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:321:in `block (3 levels) in <main>'[0m
+
+  170) [STEP3] 仕上げのテスト アイコンのテスト トップ画面 本のアイコンが表示される
+       [31mFailure/Error: visit root_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested:0x00000000084a6598>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:354:in `block (4 levels) in <main>'[0m
+
+  171) [STEP3] 仕上げのテスト アイコンのテスト アバウト画面 本のアイコンが表示される
+       [31mFailure/Error: visit '/home/about'[0m
+       [31m[0m
+       [31mNoMethodError:[0m
+       [31m  undefined method `visit' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_2:0x00000000084eb940>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:366:in `block (4 levels) in <main>'[0m
+
+  172) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 Homeリンクのアイコンが表示される
+       [31mFailure/Error: visit root_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_3:0x0000000008529038>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:378:in `block (4 levels) in <main>'[0m
+
+  173) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 Aboutリンクのアイコンが表示される
+       [31mFailure/Error: visit root_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_3:0x000000000856f790>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:378:in `block (4 levels) in <main>'[0m
+
+  174) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 sign upリンクのアイコンが表示される
+       [31mFailure/Error: visit root_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_3:0x00000000085ac7f8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:378:in `block (4 levels) in <main>'[0m
+
+  175) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 loginリンクのアイコンが表示される
+       [31mFailure/Error: visit root_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `root_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_3:0x00000000085f0ac0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:378:in `block (4 levels) in <main>'[0m
+
+  176) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 Homeリンクのアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_4:0x0000000005d018a8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:399:in `block (4 levels) in <main>'[0m
+
+  177) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 Usersリンクのアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_4:0x00000000057463a0>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:399:in `block (4 levels) in <main>'[0m
+
+  178) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 Booksリンクのアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_4:0x00000000075d2440>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:399:in `block (4 levels) in <main>'[0m
+
+  179) [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 log outリンクのアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_4:0x000000000776d688>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:399:in `block (4 levels) in <main>'[0m
+
+  180) [STEP3] 仕上げのテスト アイコンのテスト サイドバー ユーザ一覧画面でレンチアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_5:0x0000000007814a00>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:423:in `block (4 levels) in <main>'[0m
+
+  181) [STEP3] 仕上げのテスト アイコンのテスト サイドバー ユーザ詳細画面でレンチアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_5:0x000000000789bbb8>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:423:in `block (4 levels) in <main>'[0m
+
+  182) [STEP3] 仕上げのテスト アイコンのテスト サイドバー 投稿一覧画面でレンチアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_5:0x0000000007971498>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:423:in `block (4 levels) in <main>'[0m
+
+  183) [STEP3] 仕上げのテスト アイコンのテスト サイドバー 投稿詳細画面でレンチアイコンが表示される
+       [31mFailure/Error: visit new_user_session_path[0m
+       [31m[0m
+       [31mNameError:[0m
+       [31m  undefined local variable or method `new_user_session_path' for #<RSpec::ExampleGroups::STEP3::Nested_5::Nested_5:0x0000000007aa7178>[0m
+       [36m# ./spec/spec 2/system/03_finishing_touches_spec.rb:423:in `block (4 levels) in <main>'[0m
+
+  184) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 「New book」と表示される
+       [31mFailure/Error: expect(page).to have_content 'New book'[0m
+       [31m  expected to find text "New book" in "Bookers2\nHome Users Books Logout\nUser.info\nname gstvv7uuzw introduction ngozjk5w7uogdnqse7dk\nNew Book\nTitle\nOpinion\nCreate Book\nBooks\ntitle Opinion ict4j 6tkdcxfz2v3hnf84wf0e 02xcy ta1uh95c9k6mg1agk5kh\nCopyRight Infratop.inc". (However, it was found 1 time using a case insensitive search.)[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/02_after_login_spec.rb:73:in `block (4 levels) in <main>'[0m
+
+  185) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 「New book」と表示される
+       [31mFailure/Error: expect(page).to have_content 'New book'[0m
+       [31m  expected to find text "New book" in "Bookers2\nHome Users Books Logout\nUser.info\nname k6c1868wey introduction dn8oo7cerdjn3lx9cgsr\nNew Book\nTitle\nOpinion\nCreate Book\nBook detail\ntitle Opinion\nk6c1868wey\n9ui3a zrw8zxwdv2mcicxeqm9v Edit Destroy\nCopyRight Infratop.inc". (However, it was found 1 time using a case insensitive search.)[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/02_after_login_spec.rb:146:in `block (4 levels) in <main>'[0m
+
+  186) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する
+       [31mFailure/Error: expect(all('img').size).to eq(3)[0m
+       [31m[0m
+       [31m  expected: 3[0m
+       [31m       got: 0[0m
+       [31m[0m
+       [31m  (compared using ==)[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/02_after_login_spec.rb:258:in `block (4 levels) in <main>'[0m
+
+  187) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される
+       [31mFailure/Error: expect(page).to have_link 'Show', href: user_path(user)[0m
+       [31m  expected to find link "Show" with href "/users/2" but there were no matches[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/02_after_login_spec.rb:265:in `block (4 levels) in <main>'[0m
+
+  188) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 「New book」と表示される
+       [31mFailure/Error: expect(page).to have_content 'New book'[0m
+       [31m  expected to find text "New book" in "Bookers2\nHome Users Books Logout\nUser.info\nname 1ow5g44wq9 introduction lsjzmw0kvonsln0n41h0\nNew Book\nTitle\nOpinion\nCreate Book\nUsers\nimage name hh1ilzgq0f show 1ow5g44wq9 show\nCopyRight Infratop.inc". (However, it was found 1 time using a case insensitive search.)[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/02_after_login_spec.rb:279:in `block (4 levels) in <main>'[0m
+
+  189) [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 「New book」と表示される
+       [31mFailure/Error: expect(page).to have_content 'New book'[0m
+       [31m  expected to find text "New book" in "Bookers2\nHome Users Books Logout\nUser.info\nname utx4xezy6u introduction d3do8yoen0jm2i7jk0g6\nNew Book\nTitle\nOpinion\nCreate Book\nBooks\ntitle Opinion yzbch oxobvvcnqwtne72lc009\nCopyRight Infratop.inc". (However, it was found 1 time using a case insensitive search.)[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/02_after_login_spec.rb:333:in `block (4 levels) in <main>'[0m
+
+  190) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい
+       [31mFailure/Error: expect(page).to have_link '', href: user_path(other_user)[0m
+       [31m  expected to find link "" with href "/users/1" but there were no matches[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/03_finishing_touches_spec.rb:277:in `block (5 levels) in <main>'[0m
+
+  191) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる
+       [31mFailure/Error: expect(current_path).to eq '/users/' + user.id.to_s[0m
+       [31m[0m
+       [31m  expected: "/users/2"[0m
+       [31m       got: "/users"[0m
+       [31m[0m
+       [31m  (compared using ==)[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/03_finishing_touches_spec.rb:312:in `block (4 levels) in <main>'[0m
+
+  192) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ一覧画面
+       [31mFailure/Error: is_expected.to have_selector '.container .row .col-md-8.offset-md-1'[0m
+       [31m  expected to find css ".container .row .col-md-8.offset-md-1" but there were no matches[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/03_finishing_touches_spec.rb:330:in `block (3 levels) in <main>'[0m
+
+  193) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ詳細画面
+       [31mFailure/Error: is_expected.to have_selector '.container .row .col-md-8.offset-md-1'[0m
+       [31m  expected to find css ".container .row .col-md-8.offset-md-1" but there were no matches[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/03_finishing_touches_spec.rb:335:in `block (3 levels) in <main>'[0m
+
+  194) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿一覧画面
+       [31mFailure/Error: is_expected.to have_selector '.container .row .col-md-8.offset-md-1'[0m
+       [31m  expected to find css ".container .row .col-md-8.offset-md-1" but there were no matches[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/03_finishing_touches_spec.rb:340:in `block (3 levels) in <main>'[0m
+
+  195) [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿詳細画面
+       [31mFailure/Error: is_expected.to have_selector '.container .row .col-md-8.offset-md-1'[0m
+       [31m  expected to find css ".container .row .col-md-8.offset-md-1" but there were no matches[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/03_finishing_touches_spec.rb:345:in `block (3 levels) in <main>'[0m
+
+  196) [STEP3] 仕上げのテスト アイコンのテスト アバウト画面 本のアイコンが表示される
+       [31mFailure/Error: is_expected.to have_selector '.fas.fa-book'[0m
+       [31m  expected to find css ".fas.fa-book" but there were no matches[0m
+       [31m[0m
+       [31m[0m
+       [31m[0m
+       [36m# ./spec/system/03_finishing_touches_spec.rb:370:in `block (4 levels) in <main>'[0m
+
+Finished in 20.02 seconds (files took 1.74 seconds to load)
+[31m394 examples, 196 failures[0m
+
+Failed examples:
+
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:10[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:13[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Log inリンクが表示される: 左上から5番目のリンクが「Log in」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:17[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Log inリンクの内容が正しい[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:21[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Sign Upリンクが表示される: 左上から6番目のリンクが「Sign Up」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:25[0m [36m# [STEP1] ユーザログイン前のテスト トップ画面のテスト 表示内容の確認 Sign Upリンクの内容が正しい[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:38[0m [36m# [STEP1] ユーザログイン前のテスト アバウト画面のテスト 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:50[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 タイトルが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:53[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Homeリンクが表示される: 左上から1番目のリンクが「Home」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:57[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 Aboutリンクが表示される: 左上から2番目のリンクが「About」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:61[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 sign upリンクが表示される: 左上から3番目のリンクが「sign up」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:65[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 表示内容の確認 loginリンクが表示される: 左上から4番目のリンクが「login」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:74[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 Homeを押すと、トップ画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:81[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 Aboutを押すと、アバウト画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:87[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 sign upを押すと、新規登録画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:93[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしていない場合 リンクの内容を確認 loginを押すと、ログイン画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:108[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:111[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 「Sign up」と表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:114[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 nameフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:117[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 emailフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:120[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 passwordフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:123[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 password_confirmationフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:126[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 表示内容の確認 Sign upボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:139[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 正しく新規登録される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:142[0m [36m# [STEP1] ユーザログイン前のテスト ユーザ新規登録のテスト 新規登録成功のテスト 新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:157[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:160[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 「Log in」と表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:163[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 nameフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:166[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 passwordフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:169[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 Sign upボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:172[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン 表示内容の確認 emailフォームは表示されない[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:184[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン ログイン成功のテスト ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:196[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログイン ログイン失敗のテスト ログインに失敗し、ログイン画面にリダイレクトされる[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:213[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 タイトルが表示される[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:216[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 Homeリンクが表示される: 左上から1番目のリンクが「Home」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:220[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 Usersリンクが表示される: 左上から2番目のリンクが「Users」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:224[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 Booksリンクが表示される: 左上から3番目のリンクが「Books」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:228[0m [36m# [STEP1] ユーザログイン前のテスト ヘッダーのテスト: ログインしている場合 ヘッダーの表示を確認 log outリンクが表示される: 左上から4番目のリンクが「logout」である[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:249[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログアウトのテスト ログアウト機能のテスト 正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する[0m
+[31mrspec ./spec/spec 2/system/01_before_login_spec.rb:252[0m [36m# [STEP1] ユーザログイン前のテスト ユーザログアウトのテスト ログアウト機能のテスト ログアウト後のリダイレクト先が、トップになっている[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:20[0m [36m# [STEP2] ユーザログイン後のテスト ヘッダーのテスト: ログインしている場合 リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。 Homeを押すと、自分のユーザ詳細画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:26[0m [36m# [STEP2] ユーザログイン後のテスト ヘッダーのテスト: ログインしている場合 リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。 Usersを押すと、ユーザ一覧画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:32[0m [36m# [STEP2] ユーザログイン後のテスト ヘッダーのテスト: ログインしている場合 リンクの内容を確認: ※logoutは『ユーザログアウトのテスト』でテスト済みになります。 Booksを押すと、投稿一覧画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:47[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:50[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分と他人の画像のリンク先が正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:54[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分の投稿と他人の投稿のタイトルのリンク先がそれぞれ正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:58[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分の投稿と他人の投稿のオピニオンが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:65[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 自分の名前と紹介文が表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:69[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:72[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:75[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:78[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 titleフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:81[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 opinionフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:84[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 opinionフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:87[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 Create Bookボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:98[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:101[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 投稿成功のテスト リダイレクト先が、保存できた投稿の詳細画面になっている[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:114[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:117[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:120[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:123[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿のtitleが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:126[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿のopinionが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:129[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:132[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:138[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 自分の名前と紹介文が表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:142[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:145[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:148[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 titleフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:151[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 titleフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:154[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 opinionフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:157[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 opinionフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:160[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:171[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:177[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 編集リンクのテスト 編集画面に遷移する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:188[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:191[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:203[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:206[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 「Editing Book」と表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:209[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 title編集フォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:212[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 opinion編集フォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:215[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Update Bookボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:218[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Showリンクが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:221[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 Backリンクが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:235[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト titleが正しく更新される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:238[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト bodyが正しく更新される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:241[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 編集成功のテスト リダイレクト先が、更新した投稿の詳細画面になっている[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:254[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:257[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:260[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人の名前がそれぞれ表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:264[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:271[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 自分の名前と紹介文が表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:275[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:278[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:281[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 titleフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:284[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 titleフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:287[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 opinionフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:290[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 opinionフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:293[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 Create Bookボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:305[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:308[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:311[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 投稿一覧に自分の投稿のtitleが表示され、リンクが正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:314[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 投稿一覧に自分の投稿のopinionが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:317[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト 表示の確認 他人の投稿は表示されない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:325[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 自分の名前と紹介文が表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:329[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクが存在する[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:332[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:335[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 titleフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:338[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 titleフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:341[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 opinionフォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:344[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 opinionフォームに値が入っていない[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:347[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 Create Bookボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:359[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:362[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 名前編集フォームに自分の名前が表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:365[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 画像編集フォームが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:368[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 自己紹介編集フォームに自分の自己紹介文が表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:371[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 表示の確認 Update Userボタンが表示される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:385[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト nameが正しく更新される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:388[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト introductionが正しく更新される[0m
+[31mrspec ./spec/spec 2/system/02_after_login_spec.rb:391[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ情報編集画面のテスト 更新成功のテスト リダイレクト先が、自分のユーザ詳細画面になっている[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:12[0m [36m# [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザ新規登録成功時[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:21[0m [36m# [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザログイン成功時[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:28[0m [36m# [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザログアウト成功時[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:38[0m [36m# [STEP3] 仕上げのテスト サクセスメッセージのテスト ユーザのプロフィール情報更新成功時[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:47[0m [36m# [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの新規投稿成功時: 投稿一覧画面から行います。[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:58[0m [36m# [STEP3] 仕上げのテスト サクセスメッセージのテスト 投稿データの更新成功時[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:81[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする 新規登録されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:84[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする 新規登録画面を表示しており、フォームの内容が正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:90[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザ新規登録失敗: nameを1文字にする バリデーションエラーが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:109[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする 更新されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:112[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする ユーザ編集画面を表示しており、フォームの内容が正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:115[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト ユーザのプロフィール情報編集失敗: nameを1文字にする バリデーションエラーが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:131[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿が保存されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:134[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 投稿一覧画面を表示している[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:140[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする 新規投稿フォームの内容が正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:144[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの新規投稿失敗: 投稿一覧画面から行い、titleを空にする バリデーションエラーが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:162[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする 投稿が更新されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:165[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする 投稿編集画面を表示しており、フォームの内容が正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:170[0m [36m# [STEP3] 仕上げのテスト 処理失敗時のテスト 投稿データの更新失敗: titleを空にする エラーメッセージが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:179[0m [36m# [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ一覧画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:183[0m [36m# [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ詳細画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:187[0m [36m# [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する ユーザ情報編集画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:191[0m [36m# [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する 投稿一覧画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:195[0m [36m# [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する 投稿詳細画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:199[0m [36m# [STEP3] 仕上げのテスト ログインしていない場合のアクセス制限のテスト: アクセスできず、ログイン画面に遷移する 投稿編集画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:219[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:222[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 「Book detail」と表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:225[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:228[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿のtitleが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:231[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿のopinionが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:234[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の編集リンクが表示されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:237[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 投稿の削除リンクが表示されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:243[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人の名前と紹介文が表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:247[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:250[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分の名前と紹介文は表示されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:254[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:261[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:273[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 URLが正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:276[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:279[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧に他人の投稿のtitleが表示され、リンクが正しい[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:282[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧に他人の投稿のopinionが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:285[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 自分の投稿は表示されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:292[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人の名前と紹介文が表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:296[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:299[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 自分の名前と紹介文は表示されない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:303[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:310[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:327[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ一覧画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:332[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ詳細画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:337[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿一覧画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:342[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿詳細画面[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:357[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト トップ画面 本のアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:369[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト アバウト画面 本のアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:381[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 Homeリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:384[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 Aboutリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:387[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 sign upリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:390[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしていない場合 loginリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:405[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 Homeリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:408[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 Usersリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:411[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 Booksリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:414[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト ヘッダー: ログインしている場合 log outリンクのアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:429[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト サイドバー ユーザ一覧画面でレンチアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:433[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト サイドバー ユーザ詳細画面でレンチアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:437[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト サイドバー 投稿一覧画面でレンチアイコンが表示される[0m
+[31mrspec ./spec/spec 2/system/03_finishing_touches_spec.rb:441[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト サイドバー 投稿詳細画面でレンチアイコンが表示される[0m
+[31mrspec ./spec/system/02_after_login_spec.rb:72[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/system/02_after_login_spec.rb:145[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/system/02_after_login_spec.rb:257[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する[0m
+[31mrspec ./spec/system/02_after_login_spec.rb:264[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される[0m
+[31mrspec ./spec/system/02_after_login_spec.rb:278[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/system/02_after_login_spec.rb:332[0m [36m# [STEP2] ユーザログイン後のテスト 自分のユーザ詳細画面のテスト サイドバーの確認 「New book」と表示される[0m
+[31mrspec ./spec/system/03_finishing_touches_spec.rb:276[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい[0m
+[31mrspec ./spec/system/03_finishing_touches_spec.rb:310[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる[0m
+[31mrspec ./spec/system/03_finishing_touches_spec.rb:327[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ一覧画面[0m
+[31mrspec ./spec/system/03_finishing_touches_spec.rb:332[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている ユーザ詳細画面[0m
+[31mrspec ./spec/system/03_finishing_touches_spec.rb:337[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿一覧画面[0m
+[31mrspec ./spec/system/03_finishing_touches_spec.rb:342[0m [36m# [STEP3] 仕上げのテスト グリッドシステムのテスト: container, row, col-xs-〇を正しく使えている 投稿詳細画面[0m
+[31mrspec ./spec/system/03_finishing_touches_spec.rb:369[0m [36m# [STEP3] 仕上げのテスト アイコンのテスト アバウト画面 本のアイコンが表示される[0m
+

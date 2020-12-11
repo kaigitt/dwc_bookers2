@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
-
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_user!,except: [:top]
+  before_action :authenticate_user!,except: [:top, :about]
+    before_action :set_current_user
 
   def after_sign_in_path_for(resource)
-    books_path # ログイン後に遷移するpathを設定
+    user_path(current_user.id) # ログイン後に遷移するpathを設定
   end
 
   def after_sign_out_path_for(resource)
@@ -12,12 +12,27 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(resource)
-    books_path # サインアップに遷移するpathを設定
+    user_path(current_user.id) # サインアップに遷移するpathを設定
+  end
+
+
+  def set_current_user
+    @current_user = User.find_by(id: session[:user_id])
+  end
+
+  def ensure_correct_user
+    @book = Book.find_by(id:params[:id])
+    if @book.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/books/index")
+    end
   end
 
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    added_attrs = [:name, :email, :password, :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 end

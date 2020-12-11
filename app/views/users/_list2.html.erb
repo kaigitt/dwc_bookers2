@@ -1,3 +1,16 @@
-  <%= attachment_image_tag user, :profile_image %>
-  <%= user.name %>
-  <%= user.introduction %>
+<div class="user-info pb-3">
+  <%= attachment_image_tag user, :profile_image, :fill, 100, 100 %>
+  <table class="table">
+    <thead>
+      <th scope="col">name</th>
+      <th scope="col"><%= user.name %></th>
+    </thead>
+    <tbody>
+      <th scope="col">introduction</th>
+      <th scope="col"><%= user.introduction %></th>
+    </tbody>
+  </table>
+  <%= link_to edit_user_path(user) do %>
+     <button type="button" class="btn btn-outline-secondary fas fa-user-cog w-100"></button>
+  <% end %>
+</div>

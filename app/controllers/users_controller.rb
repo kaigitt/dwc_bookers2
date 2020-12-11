@@ -1,31 +1,38 @@
 class UsersController < ApplicationController
 
+  before_action :ensure_correct_user, only: [:edit, :update]
+
   def index
-    @users = User.all
-    @id = current_user.id
-    @user = User.find(@id)
+    @users = User.all.order(id: "ASC")
+    @user = User.find(current_user.id)
     @book = Book.new
   end
 
   def show
     @user = User.find(params[:id])
-    @id = current_user.id
-    @books = Book.where(user_id: @id)
+    @books = Book.where(user_id: params[:id])
     @book = Book.new
   end
 
   def edit
     @user = User.find(params[:id])
-    @user.profile_image_id = current_user.id
-    @user.save
+    @user.profile_image_id = @current_user.id
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-     redirect_to user_path(@user.id)
+      flash[:notice] = "You have updated user successfully."
+      redirect_to user_path(@user.id)
     else
-     render ("edit")
+     render :edit
+    end
+  end
+
+  def ensure_correct_user
+    @user = User.find_by(id:params[:id])
+    if @user.id != current_user.id
+      redirect_to("/users")
     end
   end
 
