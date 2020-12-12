@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!,except: [:top, :about]
-    before_action :set_current_user
+  before_action :set_current_user
 
   def after_sign_in_path_for(resource)
     user_path(current_user.id) # ログイン後に遷移するpathを設定
@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
   def ensure_correct_user
     @book = Book.find_by(id:params[:id])
     if @book.user_id != @current_user.id
-      flash[:notice] = "権限がありません"
       redirect_to("/books/index")
     end
   end

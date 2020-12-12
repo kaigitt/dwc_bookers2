@@ -3,7 +3,6 @@
     <div class="col-12">
         <!--User infoテンプレ-->
       <div class="user-info">
-       <h2>User.info</h2>
        <%= render 'users/list2', user: @user %>
       </div>
   </div>
@@ -11,12 +10,12 @@
   <div class="col-12">
         <!--部分テンプレート-->
     <div class="new-book">
-    <h2>New Book</h2>
     <%= render 'users/list', book: @book %>
     </div>
   </div>
  </div>
-  <div class="col-md-8">
+
+  <div class="col-md-8 offset-md-1">
     <div class="book_index">
      <div class="users_index">
 
@@ -31,10 +30,10 @@
     <% @users.each do |user| %>
     <tbody>
         <td>
-         <%= attachment_image_tag user, :profile_image, :fill, 40, 40 %>
+         <%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size: "40x40" %>
         </td>
         <td><%= user.name %></td>
-        <td><%= link_to "show", user_path(user) %></td>
+        <td><%= link_to "Show", user_path(user) %></td>
     </tbody>
     <% end %>
   </table>

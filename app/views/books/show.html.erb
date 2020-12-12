@@ -4,54 +4,54 @@
     <div class="col-12">
         <!--User infoテンプレ-->
       <div class="user-info">
-       <h2>User.info</h2>
        <%= render 'users/list2', user: @user %>
       </div>
     </div>
     <div class="col-12">
         <!--部分テンプレート-->
     <div class="new-book">
-    <h2>New Book</h2>
     <%= render 'users/list', book: @booknew %>
     </div>
   </div>
  </div>
-  <div class="col-md-8">
+  <div class="col-md-8 offset-md-1">
     <div class="book_index">
       <h2>Book detail</h2>
-    <table class="table table-hover">
-      <thead>
-      <th></th>
-      <th scope="col">title</th>
-      <th scope="col">Opinion</th>
-      </thead>
-      <tbody>
-      <td>
-        <div class="col-12"><%= attachment_image_tag @user, :profile_image, :fill, 40, 40 %></div>
-        <div class="col-12"><%= link_to user_path(@book.user_id) do %><%= @user.name %><% end %></div>
-      </td>
-       <td>
-          <%= link_to book_path(@book) do %>
-          <%= @book.title %>
+      <table class="table table-hover">
+        <tbody>
+        <td>
+          <div class="d-flex">
+            <div>
+          <%= link_to user_path(@book.user_id) do %>
+            <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size: "40x40" %>
           <% end %>
+          </div>
+          <div>
+          <%= link_to user_path(@book.user_id) do %>
+            <%= @user.name %>
+          <% end %>
+           </div>
+          </div>
         </td>
+       <td>
+          <%= link_to book_path(@book.id) do %>
+            <%= @book.title %>
+          <% end %>
+      </td>
       <td>
-         <%= @book.body %>
+        <%= @book.body %>
       </td>
       <% if @user.id == current_user.id %>
         <td>
-          <button type="button" class="btn btn-success">
-            <%= link_to "Edit", "/books/#{@book.id}/edit" %>
-          </button>
+          <%= link_to "Edit", "/books/#{@book.id}/edit", {class: "btn btn-success"}%>
         </td>
         <td>
-          <button type="button" class="btn btn-danger">
-            <%= link_to "Destroy", "/books/#{@book.id}", method: :delete, data: { confirm: '本当に削除しますか？' }%>
-          </button>
+          <%= link_to "Destroy", "/books/#{@book.id}", class: "btn btn-danger", method: :delete, data: { confirm: '本当に消しますか？' }%>
         </td>
       <% end %>
     </tbody>
    </table>
    </div>
+
   </div>
 </div>

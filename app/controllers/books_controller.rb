@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index

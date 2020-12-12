@@ -1,7 +1,7 @@
 
 
 <div class="container w-100">
-  <div class="row w-50 center-block">
+  <div class="row w-100 center-block">
     <h1 class="text-left">welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
     <div>
     <p class="text-left">In <i class="fas fa-book"></i><strong>Bookers</strong>,</p>
@@ -10,8 +10,7 @@
     </div>
   </div>
 <div class="row button flex-column w-100 ">
-  <button type="button" class="btn btn-info btn-primary btn-lg btn-block col-md-6 col-md-offset-6 mx-auto"><a href="/users/sign_in">Log in</a></button>
-  <button type="button" class="btn btn-success btn-primary btn-lg btn-block col-md-6 mx-auto"><a href="/users/sign_up">Sign Up</a></button>
+  <%= link_to("Log in", new_user_session_path, {class: "btn btn-info btn-lg btn-block col-md-6 col-md-offset-6 mx-auto"}) %>
+  <%= link_to("Sign Up", new_user_registration_path, {class: "btn btn-success btn-lg btn-block col-md-6 mx-auto"}) %>
 </div>
-
 </div>
