@@ -1,16 +1,17 @@
 
-
 <div class="container w-100">
   <div class="row w-100 center-block">
-    <h1 class="text-left">welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
+    <div>
+      <h1 class="text-left">welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
+    </div>
     <div>
     <p class="text-left">In <i class="fas fa-book"></i><strong>Bookers</strong>,</p>
     <p class="text-left">you can share and exchange your opinions , inpressions , and emotions</p>
     <p class="text-left">about various books!</p>
     </div>
   </div>
-<div class="row button flex-column w-100 ">
+  <div class="row button flex-column w-100 ">
   <%= link_to("Log in", new_user_session_path, {class: "btn btn-info btn-lg btn-block col-md-6 col-md-offset-6 mx-auto"}) %>
   <%= link_to("Sign Up", new_user_registration_path, {class: "btn btn-success btn-lg btn-block col-md-6 mx-auto"}) %>
-</div>
+  </div>
 </div>
