@@ -6,7 +6,19 @@
        <%= render 'users/list2', user: @user %>
       </div>
   </div>
-  <div class="col-1"></div>
+  <div>
+    <% if @user.id != current_user.id %>
+    <% if current_user.following?(@user) %>
+        <td>
+          <%= link_to 'フォロー外す', unfollow_path(@user.id, order_sort: 0), class: "btn btn-primary", method: :POST %>
+        </td>
+      <% else %>
+        <td>
+          <%= link_to 'フォローする', follow_path(@user.id, order_sort: 0), class: "btn btn-success", method: :POST %>
+        </td>
+      <% end %>
+      <% end %>
+  </div>
   <div class="col-12">
         <!--部分テンプレート-->
     <div class="new-book">

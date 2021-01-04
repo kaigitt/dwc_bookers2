@@ -5,8 +5,8 @@
       <div class="user-info">
        <%= render 'users/list2', user: @user %>
       </div>
-  </div>
-  <div class="col-1"></div>
+    </div>
+    <div class="col-1"></div>
   <div class="col-12">
         <!--部分テンプレート-->
     <div class="new-book">
@@ -34,6 +34,15 @@
         </td>
         <td><%= user.name %></td>
         <td><%= link_to "Show", user_path(user) %></td>
+        <% if current_user.following?(user) %>
+        <td>
+          <%= link_to 'フォロー外す', unfollow_path(user.id, order_sort: 1), method: :POST %>
+        </td>
+        <% else %>
+        <td>
+          <%= link_to 'フォローする', follow_path(user.id, order_sort: 1), method: :POST %>
+        </td>
+        <% end %>
     </tbody>
     <% end %>
   </table>
