@@ -33,14 +33,31 @@
            </div>
           </div>
         </td>
-       <td>
+        <td>
           <%= link_to book_path(@book.id) do %>
             <%= @book.title %>
           <% end %>
-      </td>
-      <td>
-        <%= @book.body %>
-      </td>
+        </td>
+        <td>
+          <%= @book.body %>
+        </td>
+      <% if @book.favorited_by?(current_user)%>
+        <td>
+          <p>
+            <%= link_to book_favorites_path(@book, order_sort: 0), method: :delete do %>
+             ♥<%= @book.favorites.count %>
+            <% end %>
+          </p>
+        </td>
+      <% else %>
+        <td>
+          <p>
+            <%= link_to book_favorites_path(@book, order_sort: 0), method: :post do %>
+              ♡<%= @book.favorites.count %>
+            <% end %>
+          </p>
+        </td>
+      <% end %>
       <% if @user.id == current_user.id %>
         <td>
           <%= link_to "Edit", "/books/#{@book.id}/edit", {class: "btn btn-success"}%>
