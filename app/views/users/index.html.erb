@@ -1,3 +1,14 @@
+<div class="container">
+<div class="row">
+  <div class="mx-auto pt-2">
+<%= form_tag(search_path, :method => 'get') do %>
+    <%= text_field_tag :search %>
+    <%= select_tag(:option, options_for_select([["user", "1"],["post","2"]]))%>
+    <%= select_tag(:choice, options_for_select([["あいまい検索", "1" ],["後方一致検索", "2" ],["前方一致検索", "3" ],["完全一致検索", "4" ]])) %>
+    <%= submit_tag 'Search' %>
+<% end %>
+</div>
+</div>
 <div class="row center-block pt-3">
   <div class="col-md-3">
     <div class="col-12">
@@ -34,6 +45,8 @@
         </td>
         <td><%= user.name %></td>
         <td><%= link_to "Show", user_path(user) %></td>
+        <td>フォロー数：<%= user.following_user.count %></td>
+        <td>フォロワー数：<%= user.follower.count%></td>
         <% if current_user.following?(user) %>
         <td>
           <%= link_to 'フォロー外す', unfollow_path(user.id, order_sort: 1), method: :POST %>
@@ -49,4 +62,5 @@
   </div>
    </div>
   </div>
+</div>
 </div>

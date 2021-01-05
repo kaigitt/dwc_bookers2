@@ -37,12 +37,21 @@ class UsersController < ApplicationController
 
   def following_user
     @user = User.find(params[:id])
-
   end
 
   def follower_user
     @user = User.find(params[:id])
   end
+
+  def search
+  @user_or_post = params[:option]
+    if @user_or_post == "1"
+      @users = User.search(params[:search], @user_or_post, @how_search)
+    else
+      @books = Book.search(params[:search], @user_or_post, @how_search)
+    end
+  end
+
 
   private
   def user_params

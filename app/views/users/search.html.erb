@@ -1,0 +1,57 @@
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto pt-2">
+   <%= form_tag(search_path, :method => 'get') do %>
+    <%= text_field_tag :search %>
+    <%= select_tag(:option, options_for_select([["user", "1"],["book","2"]]))%>
+    <%= select_tag(:choice, options_for_select([["あいまい検索", "1" ],["後方一致検索", "2" ],["前方一致検索", "3" ],["完全一致検索", "4" ]])) %>
+    <%= submit_tag 'Search' %>
+   <% end %>
+   </div>
+  </div>
+
+<div class=" row search_index">
+<% if @user_or_post == "1"%>
+    <h1>Books search for "<%= params[:search] %>"</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">name</th>
+        </tr>
+        </thead>
+    <% @users.each do |user| %>
+     <tbody>
+       <td><%= attachment_image_tag user, :profile_image, size: "40x40", fallback: "no_image.jpg", size: "40x40" %></td>
+       <td><%= user.name%></td>
+     </tbody>
+    <% end %>
+  </table>
+
+<% elsif @user_or_post == "2" %>
+    <h2>Books search for "<%= params[:search] %>"</h2>
+    <table class="table">
+        <thead>
+          <tr>
+              <th scope="col">title</th>
+              <th scope="col">opinion</th>
+          </tr>
+        </thead>
+    <% @books.each do |book| %>
+     <tbody>
+       <td><%= attachment_image_tag book.user, :profile_image, size: "40x40", fallback: "no_image.jpg", size: "40x40" %></td>
+       <td>
+         <%= link_to book_path(book) do %>
+           <%= book.title %>
+         <% end %>
+        </td>
+       <td><%= book.body %></td>
+     </tbody>
+    <% end %>
+    </table>
+<% else %>
+
+<% end %>
+   </div>
+ </div>

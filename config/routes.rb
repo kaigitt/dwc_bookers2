@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   get "home/about" => "home#about"
+  get 'search' => 'users#search'
   resources :books do
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
+
   resources :users do
     member do
       get :following_user, :follower_user
