@@ -1,0 +1,96 @@
+{:uriI"�file://app/assets/javascripts/jquery.jpostal.js/test/sample_2.html?type=text/html&id=7fc8e27e47be2be8340cba2f329b2aefd23ba8df28afbbffee6598c369399847:ET:load_pathI"app/assets/javascripts;T:filenameI"@app/assets/javascripts/jquery.jpostal.js/test/sample_2.html;T:	nameI"$jquery.jpostal.js/test/sample_2;T:logical_pathI")jquery.jpostal.js/test/sample_2.html;T:content_typeI"text/html;T:sourceI"w<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>J-POSTAL</title>
+<link rel="stylesheet" type="text/css" href="sample.css" />
+<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../jquery.jpostal.js"></script>
+<script type="text/javascript">
+$(window).ready( function() {
+	$('#postcode1').jpostal({
+		postcode : [
+			'#postcode',
+		],
+		address : {
+			'#address1'  : '%3',
+			'#address2'  : '%4%5',
+		},
+		url : {
+			'http'  : '../json/',
+			'https' : '../json/',
+		}
+	});
+});
+</script>
+</head>
+<body>
+<form>
+<h1>郵便番号欄が1つ</h1>
+	
+<span>郵便番号 〒</span>
+<input id="postcode" name="postcode" maxlength="8"><br />
+
+<span>都道府県</span>
+<select id="address1" name="address1">
+	<option value="" selected="selected">選択してください</option> 
+	<option value="北海道">北海道</option>
+	<option value="青森県">青森県</option>
+	<option value="岩手県">岩手県</option>
+	<option value="宮城県">宮城県</option>
+	<option value="秋田県">秋田県</option>
+	<option value="山形県">山形県</option>
+	<option value="福島県">福島県</option>
+	<option value="茨城県">茨城県</option>
+	<option value="栃木県">栃木県</option>
+	<option value="群馬県">群馬県</option>
+	<option value="埼玉県">埼玉県</option>
+	<option value="千葉県">千葉県</option>
+	<option value="東京都">東京都</option>
+	<option value="神奈川県">神奈川県</option>
+	<option value="新潟県">新潟県</option>
+	<option value="富山県">富山県</option>
+	<option value="石川県">石川県</option>
+	<option value="福井県">福井県</option>
+	<option value="山梨県">山梨県</option>
+	<option value="長野県">長野県</option>
+	<option value="岐阜県">岐阜県</option>
+	<option value="静岡県">静岡県</option>
+	<option value="愛知県">愛知県</option>
+	<option value="三重県">三重県</option>
+	<option value="滋賀県">滋賀県</option>
+	<option value="京都府">京都府</option>
+	<option value="大阪府">大阪府</option>
+	<option value="兵庫県">兵庫県</option>
+	<option value="奈良県">奈良県</option>
+	<option value="和歌山県">和歌山県</option>
+	<option value="鳥取県">鳥取県</option>
+	<option value="島根県">島根県</option>
+	<option value="岡山県">岡山県</option>
+	<option value="広島県">広島県</option>
+	<option value="山口県">山口県</option>
+	<option value="徳島県">徳島県</option>
+	<option value="香川県">香川県</option>
+	<option value="愛媛県">愛媛県</option>
+	<option value="高知県">高知県</option>
+	<option value="福岡県">福岡県</option>
+	<option value="佐賀県">佐賀県</option>
+	<option value="長崎県">長崎県</option>
+	<option value="熊本県">熊本県</option>
+	<option value="大分県">大分県</option>
+	<option value="宮崎県">宮崎県</option>
+	<option value="鹿児島県">鹿児島県</option>
+	<option value="沖縄県">沖縄県 </option>
+</select><br />
+
+<span>市区町村・町域</span>
+<input id="address2" name="address2"><br />
+
+<input type="reset"  value="クリア">
+</form>
+</body>
+</html>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"Nfile-digest://app/assets/javascripts/jquery.jpostal.js/test/sample_2.html;TTF:charsetI"
+utf-8;F:digest"%D�Җ��O�F=�����+���'w�YϮ.�:lengthiw:dependencies_digest"%��t�Ɂ�����䞤����62ݿ���B:idI"E7fc8e27e47be2be8340cba2f329b2aefd23ba8df28afbbffee6598c369399847;F:
+mtimel+�[�_

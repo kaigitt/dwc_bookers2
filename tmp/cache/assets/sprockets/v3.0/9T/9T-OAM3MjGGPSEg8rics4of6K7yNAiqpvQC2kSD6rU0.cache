@@ -1,0 +1,120 @@
+{:uriI"­file://app/assets/javascripts/jquery.jpostal.js-master/selenium/smoketest/smoketest_3.html?type=text/html&id=d9c0d6fdd3e85dfe952d4da1130a5e592fafae38de4502a155dc18083f4d94bc:ET:load_pathI"app/assets/javascripts;T:filenameI"Xapp/assets/javascripts/jquery.jpostal.js-master/selenium/smoketest/smoketest_3.html;T:	nameI"<jquery.jpostal.js-master/selenium/smoketest/smoketest_3;T:logical_pathI"Ajquery.jpostal.js-master/selenium/smoketest/smoketest_3.html;T:content_typeI"text/html;T:sourceI"W<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/jquery.jpostal.js/sample_1.html" />
+<title>smoketest_3</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">smoketest_3</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>${BASE_URL}sample_3.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;reset&quot;]</td>
+	<td></td>
+</tr>
+<!--#100-->
+<!--#æ±äº¬éƒ½ åƒä»£ç”°åŒº-->
+<tr>
+	<td>type</td>
+	<td>id=postcode1</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=address1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address1</td>
+	<td>æ±äº¬éƒ½</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td>åƒä»£ç”°åŒº</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address5</td>
+	<td></td>
+</tr>
+<!--#100-8994-->
+<!--#æ±äº¬éƒ½ åƒä»£ç”°åŒº åƒä»£ç”°-->
+<tr>
+	<td>type</td>
+	<td>id=postcode1</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode2</td>
+	<td>8994</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address1</td>
+	<td>æ±äº¬éƒ½</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td>åƒä»£ç”°åŒº</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address3</td>
+	<td>ä¸¸ã®å†…</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address4</td>
+	<td>ï¼’ä¸ç›®ï¼—ï¼ï¼’</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address5</td>
+	<td>æ±äº¬ä¸­å¤®éƒµä¾¿å±€</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address1_kana</td>
+	<td>ï¾„ï½³ï½·ï½®ï½³ï¾„</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2_kana</td>
+	<td>ï¾ï¾–ï¾€ï¾ï½¸</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"ffile-digest://app/assets/javascripts/jquery.jpostal.js-master/selenium/smoketest/smoketest_3.html;TTF:charsetI"
+utf-8;F:digest"%ŞË/yŞJ{rƒšGã>ZÎÑJİ˜€§£ğ:â÷®Š:lengthiW:dependencies_digest"%ÿpdŸ«×znİİì1×Y“¢_VOvAœ¥ã6z:idI"Ed9c0d6fdd3e85dfe952d4da1130a5e592fafae38de4502a155dc18083f4d94bc;F:
+mtimel+·[õ_

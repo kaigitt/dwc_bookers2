@@ -1,0 +1,103 @@
+{:uriI"­file://app/assets/javascripts/jquery.jpostal.js-master/selenium/smoketest/smoketest_2.html?type=text/html&id=7911af0e78605c9ad1916d095b44d2915a62b8a5a0622d1c1f7f55a5e71544ee:ET:load_pathI"app/assets/javascripts;T:filenameI"Xapp/assets/javascripts/jquery.jpostal.js-master/selenium/smoketest/smoketest_2.html;T:	nameI"<jquery.jpostal.js-master/selenium/smoketest/smoketest_2;T:logical_pathI"Ajquery.jpostal.js-master/selenium/smoketest/smoketest_2.html;T:content_typeI"text/html;T:sourceI"[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/jquery.jpostal.js/sample_1.html" />
+<title>smoketest_2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">smoketest_2</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>${BASE_URL}sample_2.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;reset&quot;]</td>
+	<td></td>
+</tr>
+<!--#100-->
+<!--#æ±äº¬éƒ½ åƒä»£ç”°åŒº-->
+<tr>
+	<td>type</td>
+	<td>id=postcode</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>waitForNotValue</td>
+	<td>id=address1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address1</td>
+	<td>æ±äº¬éƒ½</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td>åƒä»£ç”°åŒº</td>
+</tr>
+<!--#100-0001-->
+<!--#æ±äº¬éƒ½ åƒä»£ç”°åŒº åƒä»£ç”°-->
+<tr>
+	<td>type</td>
+	<td>id=postcode</td>
+	<td>100-0001</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address1</td>
+	<td>æ±äº¬éƒ½</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td>åƒä»£ç”°åŒºåƒä»£ç”°</td>
+</tr>
+<!--#1000001-->
+<!--#æ±äº¬éƒ½ åƒä»£ç”°åŒº åƒä»£ç”°-->
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;reset&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode</td>
+	<td>1000001</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>100</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address1</td>
+	<td>æ±äº¬éƒ½</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td>åƒä»£ç”°åŒºåƒä»£ç”°</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"ffile-digest://app/assets/javascripts/jquery.jpostal.js-master/selenium/smoketest/smoketest_2.html;TTF:charsetI"
+utf-8;F:digest"%÷?âÊà—IÉtLª„îŒ4aÃ3AÅqŠX
+¿ÁIÌÃP:lengthi[:dependencies_digest"%(|DÅ9æ9şæÔ›Î×Ncˆ¡xq!¢ÕÉåŒî$³:idI"E7911af0e78605c9ad1916d095b44d2915a62b8a5a0622d1c1f7f55a5e71544ee;F:
+mtimel+¶[õ_

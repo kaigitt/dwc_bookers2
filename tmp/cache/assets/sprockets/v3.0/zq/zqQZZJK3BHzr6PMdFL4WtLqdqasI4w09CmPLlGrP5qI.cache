@@ -1,0 +1,19 @@
+{:uriI"¢file://app/assets/javascripts/jquery.jpostal.js-master/package-lock.json?type=application/json&id=943328ed747cd600f92013f081c2e68e697bf029dc889cf3646934d8fcfa9a9a:ET:load_pathI"app/assets/javascripts;T:filenameI"Fapp/assets/javascripts/jquery.jpostal.js-master/package-lock.json;T:	nameI"*jquery.jpostal.js-master/package-lock;T:logical_pathI"/jquery.jpostal.js-master/package-lock.json;T:content_typeI"application/json;T:sourceI"m{
+  "name": "jquery-jpostal-ja",
+  "version": "2.11.7",
+  "lockfileVersion": 1,
+  "requires": true,
+  "dependencies": {
+    "jquery": {
+      "version": "3.4.1",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz",
+      "integrity": "sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg=="
+    }
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Tfile-digest://app/assets/javascripts/jquery.jpostal.js-master/package-lock.json;TTF:charsetI"
+utf-8;F:digest"%Û+©ĞalMr—µ6>÷
+,@DñßİS¹M5§zûn§:lengthim:dependencies_digest"%×ˆwıYŠ@]ßuÙE;ÌWî…mÓmÁL*üßMÌ:idI"E943328ed747cd600f92013f081c2e68e697bf029dc889cf3646934d8fcfa9a9a;F:
+mtimel+ ]õ_

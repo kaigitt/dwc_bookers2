@@ -1,0 +1,166 @@
+{:uriI"�file://app/assets/javascripts/jquery.jpostal.js-master/selenium/ticket/ticket_050.html?type=text/html&id=2afe3a767f4969228c0f2c8e829ef68ba0c76bccb7c59465477fbaa6e1a8c833:ET:load_pathI"app/assets/javascripts;T:filenameI"Tapp/assets/javascripts/jquery.jpostal.js-master/selenium/ticket/ticket_050.html;T:	nameI"8jquery.jpostal.js-master/selenium/ticket/ticket_050;T:logical_pathI"=jquery.jpostal.js-master/selenium/ticket/ticket_050.html;T:content_typeI"text/html;T:sourceI"�
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/jquery.jpostal.js/sample_1.html" />
+<title>ticket_050</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ticket_050</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>${BASE_URL}sample_9.html</td>
+	<td></td>
+</tr>
+<!-- #100-0001 東京都千代田区千代田 -->
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;reset&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode1</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode2</td>
+	<td>0001</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td>千代田区</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address3</td>
+	<td>千代田</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2_onchange</td>
+	<td></td>
+</tr>
+
+<!-- #000-0000 存在しない郵便番号です -->
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;reset&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode1</td>
+	<td>000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode2</td>
+	<td>0000</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2_onchange</td>
+	<td>存在しない郵便番号です</td>
+</tr>
+
+<!-- #999-7700 山形県東田川郡庄内町 -->
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;reset&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode1</td>
+	<td>999</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode2</td>
+	<td>7700</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td>東田川郡庄内町</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2_onchange</td>
+	<td></td>
+</tr>
+
+<!-- #999-9999 存在しない郵便番号です -->
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;reset&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode1</td>
+	<td>999</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postcode2</td>
+	<td>9999</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=address2_onchange</td>
+	<td>存在しない郵便番号です</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"bfile-digest://app/assets/javascripts/jquery.jpostal.js-master/selenium/ticket/ticket_050.html;TTF:charsetI"
+utf-8;F:digest"%e/�|���B�������}�M6������:lengthi�
+:dependencies_digest"%W�@iQ�������4�d��]*�I��M�Z:idI"E2afe3a767f4969228c0f2c8e829ef68ba0c76bccb7c59465477fbaa6e1a8c833;F:
+mtimel+�[�_
