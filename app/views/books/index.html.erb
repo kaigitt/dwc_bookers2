@@ -52,16 +52,18 @@
             <%= attachment_image_tag book.user, :profile_image, size: "40x40", fallback: "no_image.jpg", size: "40x40" %>
           <% end %>
         </td>
-        <div></div>
         <td>
           <%= link_to "/books/#{book.id}" do %>
             <%= book.title %>
           <% end %>
         </td>
         <td><%= book.body %></td>
-        <td><div id="favorites_buttons_<%= book.id %>">
+        <td>
+            <!--いいねのajax-->
+          <div id="favorites_buttons_<%= book.id %>">
           <%= render 'favorites/favorite', book: book %>
-        </div></td>
+          </div>
+        </td>
          <td>コメント数：<%= book.post_comments.count%></td>
       </tbody>
       <% end %>

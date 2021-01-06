@@ -18,10 +18,11 @@
     <div class="book_index">
       <h2>Book detail</h2>
       <table class="table table-hover">
-        <tbody>
+        <!--ajax範囲-->
+        <tr id="book_<%= @book.id %>">
         <td>
           <div class="d-flex">
-            <div>
+          <div>
           <%= link_to user_path(@book.user_id) do %>
             <%= attachment_image_tag @user, :profile_image, size: "40x40", fallback: "no_image.jpg", size: "40x40" %>
           <% end %>
@@ -33,45 +34,27 @@
            </div>
           </div>
         </td>
-        <td>
-          <%= link_to book_path(@book.id) do %>
-            <%= @book.title %>
-          <% end %>
-        </td>
-        <td>
-          <%= @book.body %>
-        </td>
-        <td><div id="favorites_buttons_<%= @book.id %>">
-          <%= render 'favorites/favorite', book: @book %>
-        </div></td>
+        <td><%= link_to @book.title, book_path(@book.id)%></td>
+        <td><%= @book.body %></td>
+        <td><div id="favorites_buttons_<%= @book.id %>"><%= render 'favorites/favorite', book: @book %></div></td>
       <% if @user.id == current_user.id %>
-        <td>
-          <%= link_to "Edit", "/books/#{@book.id}/edit", {class: "btn btn-success"}%>
-        </td>
-        <td>
-          <%= link_to "Destroy", "/books/#{@book.id}", class: "btn btn-danger", method: :delete, data: { confirm: '本当に消しますか？' }%>
-        </td>
+        <td><%= link_to "Edit", "/books/#{@book.id}/edit", {class: "btn btn-success"}%></td>
+        <td><%= link_to "Destroy", "/books/#{@book.id}", class: "btn btn-danger", method: :delete, data: { confirm: '本当に消しますか？' }%></td>
       <% end %>
-    </tbody>
+    　　</tr>
+    　　<!---->
    </table>
    </div>
-    <div class="post_comments_index">
-      <% @post_comments.each do |post_comment| %>
-      <table>
-        <tbody>
-          <td><%= attachment_image_tag post_comment.user, :profile_image, size: "40x40", fallback: "no_image.jpg", size: "40x40" %></td>
-          <td><%= post_comment.comment %></td>
-          <% if post_comment.user.id == current_user.id %>
-           <td><%= link_to "Destroy", "/books/#{post_comment.book_id}/post_comments/#{post_comment.id}", class: "btn btn-danger", method: :delete, data: { confirm: '本当に消しますか？' }%></td>
-          <% end %>
-        </tbody>
-      </table>
-      <% end %>
-    </div>
-    <div class="post_comments_new">
-      <%= form_with(model:[@book, @post_comment], local: true) do |f| %>
-        <%= f.text_area :comment %>
-        <%= f.submit "送信する"%>
+
+   <!--コメント一覧-->
+    <table class="post_comments">
+      <%= render 'post_comments/index', book: @book %>
+    </table>
+　　<!--コメント投稿フォーム-->
+    <div id="comment_form">
+      <%= form_with model:[@book,@post_comment], data: {"turbolinks" => false} do |f| %>
+        <%= f.text_area :comment, size:"40x5" %>
+        <%= f.submit '送信'%>
       <% end %>
     </div>
   </div>
