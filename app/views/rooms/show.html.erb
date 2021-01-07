@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <%= @entries_user_notme.name %>
+    <div id="chat_area">
+      <%= render "chat_area" %>
+    </div>
+
+    <div>
+     <%= form_with(model: @message, url: messages_path(@message.id), remote: true, id: "chat_form") do |f|  %>
+     <%= f.hidden_field :room_id, value: @room.id %>
+     <%= f.text_field :message, class: "textarea" %>
+     <%= f.submit "go" %>
+     <% end %>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,9 @@
       <div class="user-info">
        <%= render 'users/list2', user: @user %>
       </div>
+      <div>
+        <%= render "users/contact" %>
+      </div>
   </div>
   <div>
     <% if @user.id != current_user.id %>
@@ -17,7 +20,7 @@
           <%= link_to 'フォローする', follow_path(@user.id, order_sort: 0), class: "btn btn-success", method: :POST %>
         </td>
       <% end %>
-      <% end %>
+    <% end %>
   </div>
   <div class="col-12">
         <!--部分テンプレート-->
@@ -56,4 +59,5 @@
    </div>
   </div>
 </div>
+
 

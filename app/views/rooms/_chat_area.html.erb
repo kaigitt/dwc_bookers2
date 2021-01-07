@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+<div class="left-button"></div>
+<% @entries.each do |e| %>
+  <div class="user-name">
+    <strong>
+      <a class="rooms-user-link" href="/users/<%= e.user.id %>">
+        <%= e.user.nickname %>
+      </a>
+    </strong>
+  </div>
+<% end %>
+
+<div class="chats">
+  <div class="chat__scroll">
+    <% if @messages.present? %>
+      <% @messages.each do |m| %>
+        <div id="message_<%= m.id %>">
+          <div class="chatbox">
+              <%= m.user.name %>
+              <%= m.message %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
+</div>
