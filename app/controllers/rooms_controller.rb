@@ -7,7 +7,6 @@ class RoomsController < ApplicationController
 
     def create
         @room = Room.create
-
         @joinCurrentUser = Entry.create(user_id: current_user.id, room_id: @room.id)
         @joinUser = Entry.create(join_room_params)
         redirect_to room_path(@room.id)
@@ -19,8 +18,6 @@ class RoomsController < ApplicationController
             @messages = @room.messages.includes(:user).order("created_at asc")
             @message = Message.new
             @entries = @room.entries
-            @entries_user_notme = Entry.where.not(user_id: current_user.id)
-            raise
         else
             redirect_back(fallback_location: root_path)
         end
