@@ -21,7 +21,7 @@
   <div class="col-12">
         <!--部分テンプレート-->
     <div class="new-book">
-    <%= render 'users/list', book: @book %>
+      <%= render 'users/list', book: @book %>
     </div>
   </div>
  </div>
@@ -47,6 +47,7 @@
         <td><%= link_to "Show", user_path(user) %></td>
         <td>フォロー数：<%= user.following_user.count %></td>
         <td>フォロワー数：<%= user.follower.count%></td>
+        
         <% if current_user.following?(user) %>
         <td>
           <%= link_to 'フォロー外す', unfollow_path(user.id, order_sort: 1), method: :POST %>

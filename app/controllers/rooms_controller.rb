@@ -18,6 +18,8 @@ class RoomsController < ApplicationController
             @messages = @room.messages.includes(:user).order("created_at asc")
             @message = Message.new
             @entries = @room.entries
+            @entry_user1 = @room.entries.first
+            @entry_user2 = @room.entries.last
         else
             redirect_back(fallback_location: root_path)
         end

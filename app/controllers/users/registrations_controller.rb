@@ -5,15 +5,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
+   def new
      super
-     SMTPAuthenticationError
-  end
+     NoticeMailer.greeting.deliver_now
+   end
 
   # POST /resource
    def create
      super
-     SMTPAuthenticationError
+     NoticeMailer.greeting.deliver_now
    end
 
   # GET /resource/edit
