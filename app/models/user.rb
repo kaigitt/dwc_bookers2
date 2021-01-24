@@ -39,7 +39,6 @@ def following?(user)
   following_user.include?(user)
 end
 
-
     def User.search(search, user_or_post, how_search)
         if user_or_post == "1"
             if how_search == "1"
