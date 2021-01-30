@@ -2,14 +2,14 @@
   <div class="col-md-3">
     <div class="col-12">
         <!--User infoテンプレ-->
-<div class="user-info">
-<%= render 'users/list2', user: @user %>
-</div>
-<div>
-<%= render "users/contact" %>
-</div>
+      <div class="user-info">
+       <%= render 'users/list2', user: @user %>
+      </div>
+      <div>
+        <%= render "users/contact" %>
+      </div>
     </div>
-    <div>
+  <div>
     <% if @user.id != current_user.id %>
     <% if current_user.following?(@user) %>
         <td>
